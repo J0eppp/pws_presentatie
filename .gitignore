@@ -130,3 +130,5 @@ dmypy.json
 
 
 *.lock
+videos/
+images/

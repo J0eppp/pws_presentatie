@@ -4,10 +4,30 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-manimgl = "*"
+argparse = "*"
+colour = "*"
+numpy = "*"
+scipy = "*"
+sympy = "*"
+tqdm = "*"
+mapbox-earcut = "*"
+matplotlib = "*"
+moderngl = "*"
+moderngl-window = "*"
+skia-pathops = "*"
+pydub = "*"
+rich = "*"
+screeninfo = "*"
+pyreadline = "*"
+validators = "*"
+ipython = "*"
+Pillow = "*"
+Pygments = "*"
+PyYAML = "*"
+PyOpenGL = "*"
+ManimPango = ">=0.2.0,<0.4.0"
 
 [dev-packages]
-autopep8 = "*"
 
 [requires]
 python_version = "3.9"
