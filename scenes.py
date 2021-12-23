@@ -4,58 +4,148 @@ from manimlib import *
 class Presentation(Scene):
     def construct(self):
         # Intro dingen
-        title = Text(
-            "Welkom bij onze presentatie over:").to_edge(UP)
-        under_title = Text(
-            "Profielwerkstuk roosteralgoritmiek").to_edge(UP * 2.3)
-        self.play(Write(title))
-        self.play(Write(under_title))
+        # title = Text(
+        #     "Welkom bij onze presentatie over:").to_edge(UP)
+        # under_title = Text(
+        #     "Profielwerkstuk roosteralgoritmiek").to_edge(UP * 2.3)
+        # self.play(Write(title))
+        # self.play(Write(under_title))
 
-        by = Text("Door: Joep van Dijk en Sam Staijen").to_edge(
-            UP * 4).scale(.6)
-        self.play(Write(by))
+        # by = Text("Door: Joep van Dijk en Sam Staijen").to_edge(
+        #     UP * 6).scale(.6)
+        # self.play(Write(by))
 
-        mentor = Text("Begeleider: T. Nooijen").to_edge(UP * 5).scale(.5)
-        self.play(Write(mentor))
+        # mentor = Text("Begeleider: T. Nooijen").to_edge(UP * 7).scale(.5)
+        # self.play(Write(mentor))
 
-        subject = Text("Vak: wiskunde").to_edge(UP * 6).scale(.4)
-        self.play(Write(subject))
+        # subject = Text("Vak: wiskunde").to_edge(UP * 8).scale(.5)
+        # self.play(Write(subject))
+
+        # self.wait(1)
+
+        # self.play(FadeOut(subject), FadeOut(mentor), FadeOut(
+        #     by), FadeOut(under_title), FadeOut(title))
+
+        # # Wat is het roosterprobleem?
+        # title = Text("Wat is het roosterprobleem?").to_edge(UP)
+        # self.play(Write(title))
+
+        # self.wait(5)
+
+        # on_screen = []
+
+        # Draw a table
+        rects = [[], [], [], [], []]
+
+        for h in range(len(rects)):
+            for i in range(0, 10):
+                rect = Rectangle(1 * 1.25, .5 * 1.25).to_edge(BOTTOM *
+                                                              (.1 + .25 * 1.25 * i)).to_edge(LEFT * (1 + 2.5 * h))
+                rects[h].append(rect)
+
+        rect_group = Group()
+        for day in rects:
+            for rect in day:
+                rect_group.add(rect)
+        self.play(ShowCreation(rect_group))
+
+        def text_rect(text: str, x, y, color="#ffffff") -> Text:
+            return Text(text, color=color).to_edge(BOTTOM * (.15 + .25 * 1.25 * y)).to_edge(LEFT * (1.1 + 2.5 * x)).scale(.7)
+
+        # ma = Text("Ma").to_edge(
+        #     LEFT * 1.1).to_edge(BOTTOM * (.15 + .25 * 1.25 * 9)).scale(.7)
+        ma = text_rect("Ma", 0, 9)
+        di = text_rect("Di", 1, 9)
+        wo = text_rect("Wo", 2, 9)
+        do = text_rect("Do", 3, 9)
+        vr = text_rect("Vr", 4, 9)
+
+        self.play(Write(ma), Write(di), Write(wo), Write(do), Write(vr))
+
+        # Start scheduling stuff
+
+        ma_u1 = text_rect("Ned", 0, 8)
+        ma_u2 = text_rect("Ned", 0, 7)
+        ma_u3 = text_rect("Wisk", 0, 6)
+        ma_u4 = text_rect("Fr", 0, 5)
+        ma_u5 = text_rect("Nat", 0, 4)
+        ma_u6 = text_rect("ML", 0, 3)
+
+        self.play(Write(ma_u1), Write(ma_u2), Write(ma_u3),
+                  Write(ma_u4), Write(ma_u5), Write(ma_u6))
+
+        di_u1 = text_rect("Ak", 1, 8)
+        di_u2 = text_rect("Ak", 1, 7)
+        di_u3 = text_rect("Eng", 1, 6, color="#ff0000")
+
+        self.play(Write(di_u1))
+        self.play(Write(di_u2))
+        self.play(Write(di_u3))
+
+        foutmelding = Text(
+            "Oh nee, de engels docent kan dinsdag het derde uur niet").to_edge(TOP * .1)
+        self.play(Write(foutmelding))
+        self.wait(1)
+        self.play(FadeOut(foutmelding))
+        foutmelding_2 = Text(
+            "Dan maar het vierde uur Engels").to_edge(TOP * .1)
+        self.play(Write(foutmelding_2))
 
         self.wait(1)
 
-        self.play(FadeOut(subject), FadeOut(mentor), FadeOut(
-            by), FadeOut(under_title), FadeOut(title))
+        self.play(FadeOut(di_u3))
 
-        # Wat is het roosterprobleem?
-        title = Text("Wat is het roosterprobleem?").to_edge(UP)
-        self.play(Write(title))
+        di_u4 = text_rect("Eng", 1, 5)
+        self.play(Write(di_u4), FadeOut(foutmelding_2))
 
-        timetabling_problem = Text(
-            "Een rooster moet aan een aantal eisen voldoen:").to_edge(UP * 2.3).scale(.9)
-        self.play(Write(timetabling_problem))
-        tp_1 = Text(
-            "1. Alle lessen die een leerling hoort te krijgen moeten gegeven worden").to_edge(UP * 4).scale(.6).to_edge(LEFT)
-        self.play(Write(tp_1))
-        tp_2 = Text(
-            "2. Een leerling of docent kan niet twee lessen tegelijk volgen/geven").to_edge(UP * 6).scale(.6).to_edge(LEFT)
-        self.play(Write(tp_2))
-        tp_3 = Text(
-            "3. Veel docenten werken part-time").to_edge(UP * 8).scale(.6).to_edge(LEFT)
-        self.play(Write(tp_3))
+        # temp = Text(
+        #     "Docenten en leerlingen moeten op hetzelfde moment beschikbaar zijn").to_edge(UP * 3).scale(.8)
+        # self.play(Write(temp))
+        # on_screen.append(temp)
+        # self.wait(1)
+        # temp = Text("Een klas moet per vak dezelfde docent hebben").to_edge(
+        #     UP * 6).scale(.8)
+        # self.play(Write(temp))
+        # on_screen.append(temp)
+        # self.wait(1)
+        # temp = Text("Et cetera").to_edge(
+        #     UP * 9).scale(.8)
+        # self.play(Write(temp))
+        # on_screen.append(temp)
+        # self.wait(1)
 
-        self.wait(1)
+        # for x in on_screen:
+        #     self.play(FadeOut(x))
 
-        timetabling_preferences = Text(
-            "Daarnaast zullen er persoonlijke belangen zijn:").to_edge(UP * 2.3).scale(.9)
-        self.play(FadeOut(tp_1),
-                  FadeOut(tp_2), FadeOut(tp_3), FadeOut(timetabling_problem))
-        self.play(Write(timetabling_preferences))
-        tpr_1 = Text("1. Leerlingen en docenten zullen zelf voorkeuren hebben, zoals zo min mogelijk tussenuren").to_edge(
-            UP * 4).scale(.6).to_edge(LEFT)
-        self.play(Write(tpr_1))
-        tpr_2 = Text("2. Leerlingen hebben liever dat de vakken verspreid zijn over de week, je wilt niet 4 uur Nederlands op één dag hebben").to_edge(
-            UP * 6).scale(.6).to_edge(LEFT)
-        self.play(Write(tpr_2))
+        # on_screen = []
+        # timetable = Table([[]])
+
+        # timetabling_problem = Text(
+        #     "Een rooster moet aan een aantal eisen voldoen:").to_edge(UP * 2.3).scale(.9)
+        # self.play(Write(timetabling_problem))
+        # tp_1 = Text(
+        #     "1. Alle lessen die een leerling hoort te krijgen moeten gegeven worden").to_edge(UP * 4).scale(.6).to_edge(LEFT)
+        # self.play(Write(tp_1))
+        # tp_2 = Text(
+        #     "2. Een leerling of docent kan niet twee lessen tegelijk volgen/geven").to_edge(UP * 6).scale(.6).to_edge(LEFT)
+        # self.play(Write(tp_2))
+        # tp_3 = Text(
+        #     "3. Veel docenten werken part-time").to_edge(UP * 8).scale(.6).to_edge(LEFT)
+        # self.play(Write(tp_3))
+
+        # self.wait(1)
+
+        # timetabling_preferences = Text(
+        #     "Daarnaast zullen er persoonlijke belangen zijn:").to_edge(UP * 2.3).scale(.9)
+        # self.play(FadeOut(tp_1),
+        #           FadeOut(tp_2), FadeOut(tp_3), FadeOut(timetabling_problem))
+        # self.play(Write(timetabling_preferences))
+        # tpr_1 = Text("1. Leerlingen en docenten zullen zelf voorkeuren hebben, zoals zo min mogelijk tussenuren").to_edge(
+        #     UP * 4).scale(.6).to_edge(LEFT)
+        # self.play(Write(tpr_1))
+        # tpr_2 = Text("2. Leerlingen hebben liever dat de vakken verspreid zijn over de week, je wilt niet 4 uur Nederlands op één dag hebben").to_edge(
+        #     UP * 6).scale(.6).to_edge(LEFT)
+        # self.play(Write(tpr_2))
 
 
 class SimplexExplanation(Scene):
