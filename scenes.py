@@ -1,38 +1,55 @@
 from manimlib import *
+import numpy as np
+import random
 
 
 class Presentation(Scene):
     def construct(self):
         # Intro dingen
-        # title = Text(
-        #     "Welkom bij onze presentatie over:").to_edge(UP)
-        # under_title = Text(
-        #     "Profielwerkstuk roosteralgoritmiek").to_edge(UP * 2.3)
-        # self.play(Write(title))
+        title = Text(
+            "Welkom bij onze presentatie over:").to_edge(UP)
+        under_title = Text(
+            "Profielwerkstuk roosteralgoritmiek").to_edge(UP * 2.3)
+        self.play(Write(title), Write(under_title))
         # self.play(Write(under_title))
 
-        # by = Text("Door: Joep van Dijk en Sam Staijen").to_edge(
-        #     UP * 6).scale(.6)
+        by = Text("Door: Joep van Dijk en Sam Staijen").to_edge(
+            UP * 6).scale(.6)
         # self.play(Write(by))
 
-        # mentor = Text("Begeleider: T. Nooijen").to_edge(UP * 7).scale(.5)
+        mentor = Text("Begeleider: T. Nooijen").to_edge(UP * 7).scale(.5)
         # self.play(Write(mentor))
 
-        # subject = Text("Vak: wiskunde").to_edge(UP * 8).scale(.5)
+        subject = Text("Vak: wiskunde").to_edge(UP * 8).scale(.5)
         # self.play(Write(subject))
 
-        # self.wait(1)
+        self.play(Write(by), Write(mentor), Write(subject))
 
-        # self.play(FadeOut(subject), FadeOut(mentor), FadeOut(
-        #     by), FadeOut(under_title), FadeOut(title))
+        self.wait(1)
 
-        # # Wat is het roosterprobleem?
-        # title = Text("Wat is het roosterprobleem?").to_edge(UP)
-        # self.play(Write(title))
+        self.play(FadeOut(subject), FadeOut(mentor), FadeOut(
+            by), FadeOut(under_title), FadeOut(title))
 
-        # self.wait(5)
+        # Wat is het roosterprobleem?
+        osg = Group()
+        title = Text("Wat is het roosterprobleem?").to_edge(UP)
+        osg.add(title)
+        self.play(Write(title))
 
-        # on_screen = []
+        self.wait(11)
+        docent_part_time = Text(
+            "Docenten werken vaak part-time").to_edge(UP * 3).scale(.7)
+        osg.add(docent_part_time)
+        self.play(Write(docent_part_time))
+
+        leerling_beschikbaar = Text(
+            "Een leerling moet op dat moment nog geen les hebben").to_edge(UP * 5).scale(.7)
+        osg.add(leerling_beschikbaar)
+        self.play(Write(leerling_beschikbaar))
+
+        self.wait(5)
+
+        self.play(FadeOut(osg))
 
         # Draw a table
         rects = [[], [], [], [], []]
@@ -44,6 +61,7 @@ class Presentation(Scene):
                 rects[h].append(rect)
 
         rect_group = Group()
+        table_group = Group()
         for day in rects:
             for rect in day:
                 rect_group.add(rect)
@@ -60,6 +78,13 @@ class Presentation(Scene):
         do = text_rect("Do", 3, 9)
         vr = text_rect("Vr", 4, 9)
 
+        days_group = Group()
+        days_group.add(ma)
+        days_group.add(di)
+        days_group.add(wo)
+        days_group.add(do)
+        days_group.add(vr)
+
         self.play(Write(ma), Write(di), Write(wo), Write(do), Write(vr))
 
         # Start scheduling stuff
@@ -71,12 +96,23 @@ class Presentation(Scene):
         ma_u5 = text_rect("Nat", 0, 4)
         ma_u6 = text_rect("ML", 0, 3)
 
+        table_group.add(ma_u1)
+        table_group.add(ma_u2)
+        table_group.add(ma_u3)
+        table_group.add(ma_u4)
+        table_group.add(ma_u5)
+        table_group.add(ma_u6)
+
         self.play(Write(ma_u1), Write(ma_u2), Write(ma_u3),
                   Write(ma_u4), Write(ma_u5), Write(ma_u6))
 
         di_u1 = text_rect("Ak", 1, 8)
         di_u2 = text_rect("Ak", 1, 7)
         di_u3 = text_rect("Eng", 1, 6, color="#ff0000")
+
+        table_group.add(di_u1)
+        table_group.add(di_u2)
+        # table_group.add(di_u3)
 
         self.play(Write(di_u1))
         self.play(Write(di_u2))
@@ -96,7 +132,74 @@ class Presentation(Scene):
         self.play(FadeOut(di_u3))
 
         di_u4 = text_rect("Eng", 1, 5)
+
+        table_group.add(di_u4)
+
         self.play(Write(di_u4), FadeOut(foutmelding_2))
+
+        self.wait(.5)
+
+        self.play(FadeOut(table_group), FadeOut(
+            rect_group), FadeOut(days_group))
+
+        self.wait(1)
+
+        rooster_formula_1 = Tex(
+            "\sum{hour \cdot scheduled \; | \; (hour, scheduled) \in lessons \; | \; lessons \in groups}").scale(.7)
+
+        self.play(Write(rooster_formula_1))
+
+        self.wait(1)
+
+        self.play(FadeOut(rooster_formula_1))
+
+        dot_group = Group()
+        dots = []
+        for i in range(300):
+            x = (np.random.random() - .5) * 13
+            y = (np.random.random() - .5) * 7
+            def r(): return random.randint(0, 255)
+            color = '#%02X%02X%02X' % (r(), r(), r())
+            dot = Dot(np.array([x, y, 1]), color=color)
+            dot_group.add(dot)
+            dots.append(dot)
+
+        self.play(ShowCreation(dot_group))
+
+        self.wait(2)
+
+        dot_group_2 = Group()
+        dots_2 = []
+        for i in range(300):
+            x = (np.random.random() - .5) * 13
+            y = (np.random.random() - .5) * 7
+            def r(): return random.randint(0, 255)
+            color = '#%02X%02X%02X' % (r(), r(), r())
+            dot = Dot(np.array([x, y, 1]), color=color)
+            dot_group_2.add(dot)
+            dots_2.append(dot)
+
+        self.play(FadeTransformPieces(dot_group, dot_group_2))
+
+        self.wait(3)
+
+        self.play(FadeOut(dot_group_2))
+
+        voorkeuren = Text("Voorkeuren toevoegen").to_edge(UP * 1)
+        self.play(Write(voorkeuren))
+
+        voorkeuren_1 = Text(
+            "Alfa-, beta- en gammavakken verspreiden over de week").to_edge(UP * 3).scale(.7)
+        self.play(Write(voorkeuren_1))
+
+        voorkeuren_strafpunten = Text(
+            "Minimaliseren door middel van een strafpuntensysteem").to_edge(UP * 5).scale(.7)
+        self.play(Write(voorkeuren_strafpunten))
+
+        self.wait(2)
+
+        self.play(FadeOut(voorkeuren), FadeOut(voorkeuren_1),
+                  FadeOut(voorkeuren_strafpunten))
 
         # temp = Text(
         #     "Docenten en leerlingen moeten op hetzelfde moment beschikbaar zijn").to_edge(UP * 3).scale(.8)
