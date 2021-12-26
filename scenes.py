@@ -6,12 +6,13 @@ import random
 class Presentation(Scene):
     def construct(self):
         title = Text(
-           "Welkom bij onze presentatie over:").to_edge(UP)
+            "Welkom bij onze presentatie over:").to_edge(UP)
         under_title = Text(
             "Profielwerkstuk roosteralgoritmiek").to_edge(UP * 2.3)
 
-        self.play(Write(title), Write(under_title) )
-        by = Text("Door: Joep van Dijk en Sam Staijen").to_edge(UP * 6).scale(.6)
+        self.play(Write(title), Write(under_title))
+        by = Text("Door: Joep van Dijk en Sam Staijen").to_edge(
+            UP * 6).scale(.6)
         # self.play(Write(by))
 
         mentor = Text("Begeleider: T. Nooijen").to_edge(UP * 7).scale(.5)
@@ -39,7 +40,8 @@ class Presentation(Scene):
         osg.add(docent_part_time)
         self.play(Write(docent_part_time))
 
-        leerling_beschikbaar = Text("Een leerling moet op dat moment nog geen les hebben").to_edge(UP * 5).scale(.7)
+        leerling_beschikbaar = Text(
+            "Een leerling moet op dat moment nog geen les hebben").to_edge(UP * 5).scale(.7)
         osg.add(leerling_beschikbaar)
         self.play(Write(leerling_beschikbaar))
 
@@ -177,7 +179,7 @@ class Presentation(Scene):
 
         self.play(FadeTransformPieces(dot_group, dot_group_2))
 
-        self.wait(3)
+        self.wait(1)
 
         self.play(FadeOut(dot_group_2))
 
@@ -192,30 +194,61 @@ class Presentation(Scene):
             "Minimaliseren door middel van een strafpuntensysteem").to_edge(UP * 5).scale(.7)
         self.play(Write(voorkeuren_strafpunten))
 
-        self.wait(2)
+        self.wait(4)
 
         self.play(FadeOut(voorkeuren), FadeOut(voorkeuren_1),
                   FadeOut(voorkeuren_strafpunten))
 
-        conclusie  = Text("Resultaten en Conclusie").to_edge(UP * 1)
+        # Wat wij hebben gedaan
+        afhankelijke_factoren = Text(
+            "Onderzoeken afhankelijke factoren").to_edge(UP * 1)
+        self.play(Write(afhankelijke_factoren))
+
+        self.wait(2)
+
+        eigen_algoritme = Text("Ontwerpen eigen algoritme").to_edge(UP * 4)
+        self.play(Write(eigen_algoritme))
+
+        self.wait(4)
+        self.play(FadeOut(afhankelijke_factoren), FadeOut(
+            eigen_algoritme))
+
+        roostermachine = Text("Roostermachine").to_edge(UP * 1)
+        self.play(Write(roostermachine))
+
+        self.wait(3)
+
+        graventheorie = Text("1. Graventheorie").to_edge(UP * 4).scale(.7)
+        self.play(Write(graventheorie))
+
+        lineair_programmeren = Text(
+            "2. Lineair programmeren").to_edge(UP * 6).scale(.7)
+        self.play(Write(lineair_programmeren))
+
+        self.wait(2)
+
+        return
+
+        conclusie = Text("Resultaten en Conclusie").to_edge(UP * 1)
         self.play(Write(conclusie))
 
         conclusie_1 = Text(
             "Aantal tussenuren bij 2 docenten per vak").to_edge(UP * 3).scale(.7)
         self.play(Write(conclusie_1))
 
-        self.wait(2)
+        self.wait(3)
 
         staafdiagram1 = [0.88, 5.75, 3.00, 8.75, 2.67, 7.33]
         inhoudstaafdiagram1 = [
-                "RS klas 1",
-                "LP klas 1",
-                "RS klas 2",
-                "LP klas 2",
-                "RS klas 3",
-                "LP klas 3",
-            ]
-        colors = ["#003f5c", "#58508d", "#003f5c", "#58508d","#003f5c", "#58508d", ]
+            "RS klas 1",
+            "LP klas 1",
+            "RS klas 2",
+            "LP klas 2",
+            "RS klas 3",
+            "LP klas 3",
+        ]
+        colors = ["#003f5c", "#58508d", "#003f5c",
+                  "#58508d", "#003f5c", "#58508d", ]
 
         bar = BarChart(
             staafdiagram1,
@@ -245,7 +278,8 @@ class Presentation(Scene):
             "RS klas 3",
             "LP klas 3",
         ]
-        colors = ["#003f5c", "#58508d", "#003f5c", "#58508d", "#003f5c", "#58508d", ]
+        colors = ["#003f5c", "#58508d", "#003f5c",
+                  "#58508d", "#003f5c", "#58508d", ]
 
         bar2 = BarChart(
             staafdiagram2,
@@ -274,7 +308,8 @@ class Presentation(Scene):
             "RS klas 3",
             "LP klas 3",
         ]
-        colors = ["#003f5c", "#58508d", "#003f5c", "#58508d", "#003f5c", "#58508d", ]
+        colors = ["#003f5c", "#58508d", "#003f5c",
+                  "#58508d", "#003f5c", "#58508d", ]
 
         bar3 = BarChart(
             staafdiagram3,
@@ -304,7 +339,8 @@ class Presentation(Scene):
             "RS klas 3",
             "LP klas 3",
         ]
-        colors = ["#003f5c", "#58508d", "#003f5c", "#58508d", "#003f5c", "#58508d", ]
+        colors = ["#003f5c", "#58508d", "#003f5c",
+                  "#58508d", "#003f5c", "#58508d", ]
 
         bar4 = BarChart(
             staafdiagram4,
