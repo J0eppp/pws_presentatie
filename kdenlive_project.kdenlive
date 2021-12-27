@@ -76,8 +76,8 @@
   <property name="kdenlive:file_hash">cd9344ed4a563fc985905139f955335d</property>
   <property name="kdenlive:audio_max0">214</property>
  </producer>
- <producer id="producer3" in="00:00:00.000" out="00:01:28.480">
-  <property name="length">2213</property>
+ <producer id="producer3" in="00:00:00.000" out="00:03:48.560">
+  <property name="length">5715</property>
   <property name="eof">pause</property>
   <property name="resource">videos/Presentation.mp4</property>
   <property name="audio_index">-1</property>
@@ -89,8 +89,8 @@
   <property name="kdenlive:clipname"/>
   <property name="kdenlive:folderid">-1</property>
   <property name="kdenlive:id">3</property>
-  <property name="kdenlive:file_size">585985</property>
-  <property name="kdenlive:file_hash">f6257e08d4ca1bcf86ac4aed45663a21</property>
+  <property name="kdenlive:file_size">1209098</property>
+  <property name="kdenlive:file_hash">9b5cb31fde8006ec7768c662570c8bca</property>
   <property name="meta.media.nb_streams">1</property>
   <property name="meta.media.0.stream.type">video</property>
   <property name="meta.media.0.stream.frame_rate">15</property>
@@ -103,7 +103,7 @@
   <property name="meta.media.0.codec.colorspace">601</property>
   <property name="meta.media.0.codec.name">h264</property>
   <property name="meta.media.0.codec.long_name">H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10</property>
-  <property name="meta.media.0.codec.bit_rate">51556</property>
+  <property name="meta.media.0.codec.bit_rate">40921</property>
   <property name="meta.attr.0.stream.handler_name.markup">VideoHandler</property>
   <property name="meta.attr.major_brand.markup">isom</property>
   <property name="meta.attr.minor_version.markup">512</property>
@@ -141,7 +141,7 @@
 ]
 </property>
   <property name="kdenlive:docproperties.kdenliveversion">21.12.0</property>
-  <property name="kdenlive:docproperties.position">2290</property>
+  <property name="kdenlive:docproperties.position">5083</property>
   <property name="kdenlive:docproperties.previewextension"/>
   <property name="kdenlive:docproperties.previewparameters"/>
   <property name="kdenlive:docproperties.profile">atsc_1080p_25</property>
@@ -186,7 +186,7 @@
   <entry producer="producer0" in="00:00:00.000" out="00:02:08.000"/>
   <entry producer="producer1" in="00:00:00.000" out="00:01:18.520"/>
   <entry producer="producer2" in="00:00:00.000" out="00:01:59.320"/>
-  <entry producer="producer3" in="00:00:00.000" out="00:01:28.480"/>
+  <entry producer="producer3" in="00:00:00.000" out="00:03:48.560"/>
  </playlist>
  <producer id="black_track" in="00:00:00.000" out="00:24:35.480">
   <property name="length">2147483647</property>
@@ -266,6 +266,10 @@
   <property name="length">1964</property>
   <property name="eof">pause</property>
   <property name="resource">/home/joep/Documents/pws_presentatie_roosteringsmachine_en_graventheorie.wav</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="mute_on_pause">0</property>
+  <property name="mlt_service">avformat-novalidate</property>
   <property name="meta.media.nb_streams">1</property>
   <property name="meta.media.0.stream.type">audio</property>
   <property name="meta.media.0.codec.sample_fmt">s16</property>
@@ -275,10 +279,6 @@
   <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
   <property name="meta.media.0.codec.bit_rate">1411200</property>
   <property name="seekable">1</property>
-  <property name="audio_index">0</property>
-  <property name="video_index">-1</property>
-  <property name="mute_on_pause">0</property>
-  <property name="mlt_service">avformat-novalidate</property>
   <property name="kdenlive:clipname"/>
   <property name="kdenlive:folderid">-1</property>
   <property name="kdenlive:id">4</property>
@@ -292,6 +292,10 @@
   <property name="length">2984</property>
   <property name="eof">pause</property>
   <property name="resource">/home/joep/Documents/pws_presentatie_lineair_programmeren.wav</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="mute_on_pause">0</property>
+  <property name="mlt_service">avformat-novalidate</property>
   <property name="meta.media.nb_streams">1</property>
   <property name="meta.media.0.stream.type">audio</property>
   <property name="meta.media.0.codec.sample_fmt">s16</property>
@@ -301,10 +305,6 @@
   <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
   <property name="meta.media.0.codec.bit_rate">1411200</property>
   <property name="seekable">1</property>
-  <property name="audio_index">0</property>
-  <property name="video_index">-1</property>
-  <property name="mute_on_pause">0</property>
-  <property name="mlt_service">avformat-novalidate</property>
   <property name="kdenlive:clipname"/>
   <property name="kdenlive:folderid">-1</property>
   <property name="kdenlive:id">5</property>
@@ -362,8 +362,8 @@
    <property name="disable">1</property>
   </filter>
  </tractor>
- <producer id="producer7" in="00:00:00.000" out="00:01:28.480">
-  <property name="length">2213</property>
+ <producer id="producer7" in="00:00:00.000" out="00:03:48.560">
+  <property name="length">5715</property>
   <property name="eof">pause</property>
   <property name="resource">videos/Presentation.mp4</property>
   <property name="audio_index">-1</property>
@@ -375,8 +375,8 @@
   <property name="kdenlive:clipname"/>
   <property name="kdenlive:folderid">-1</property>
   <property name="kdenlive:id">3</property>
-  <property name="kdenlive:file_size">585985</property>
-  <property name="kdenlive:file_hash">f6257e08d4ca1bcf86ac4aed45663a21</property>
+  <property name="kdenlive:file_size">1209098</property>
+  <property name="kdenlive:file_hash">9b5cb31fde8006ec7768c662570c8bca</property>
   <property name="xml">was here</property>
   <property name="meta.media.nb_streams">1</property>
   <property name="meta.media.0.stream.type">video</property>
@@ -390,7 +390,7 @@
   <property name="meta.media.0.codec.colorspace">601</property>
   <property name="meta.media.0.codec.name">h264</property>
   <property name="meta.media.0.codec.long_name">H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10</property>
-  <property name="meta.media.0.codec.bit_rate">51556</property>
+  <property name="meta.media.0.codec.bit_rate">40921</property>
   <property name="meta.attr.0.stream.handler_name.markup">VideoHandler</property>
   <property name="meta.attr.major_brand.markup">isom</property>
   <property name="meta.attr.minor_version.markup">512</property>
@@ -412,12 +412,12 @@
   <property name="set.test_image">0</property>
  </producer>
  <playlist id="playlist4">
-  <entry producer="producer7" in="00:00:00.000" out="00:01:28.480">
+  <entry producer="producer7" in="00:00:00.000" out="00:03:48.560">
    <property name="kdenlive:id">3</property>
   </entry>
  </playlist>
  <playlist id="playlist5"/>
- <tractor id="tractor2" in="00:00:00.000" out="00:01:28.480">
+ <tractor id="tractor2" in="00:00:00.000" out="00:03:48.560">
   <property name="kdenlive:trackheight">69</property>
   <property name="kdenlive:timeline_active">1</property>
   <property name="kdenlive:collapsed">0</property>
