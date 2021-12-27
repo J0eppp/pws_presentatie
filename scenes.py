@@ -3,6 +3,70 @@ import numpy as np
 import random
 
 
+class Grafentheorie(Scene):
+    def construct(self):
+        grafentheorie = Text("Grafentheorie").to_edge(UP * 1)
+        self.play(Write(grafentheorie))
+
+        self.wait(4)
+
+        verbanden = Text("Verbanden aanbrengen").to_edge(UP * 4).scale(.7)
+        self.play(Write(verbanden))
+
+        self.wait(2)
+
+        # Voorbeeld vrienden
+        self.play(FadeOut(verbanden), FadeOut(grafentheorie))
+
+        alice_circle = Circle(radius=.7).to_edge(LEFT * 1).to_edge(UP * 1)
+        alice_circle.set_fill(BLUE, opacity=1)
+        alice_circle.set_stroke(BLUE_E)
+        alice_label = Text("Alice").scale(.5)
+        alice_label.move_to(alice_circle)
+
+        self.play(ShowCreation(alice_circle), Write(alice_label))
+
+        bob_circle = Circle(radius=.7).to_edge(
+            RIGHT * 1).to_edge(UP * 1).set_fill(GREEN, opacity=1).set_stroke(GREEN_E)
+        bob_label = Text("Bob").scale(.5).move_to(bob_circle)
+
+        self.play(ShowCreation(bob_circle), Write(bob_label))
+
+        alice_bob = Line(alice_circle.get_edge_center(
+            bob_circle.get_center() + DOWN * .75) + DOWN * .75, bob_circle.get_edge_center(
+            alice_circle.get_center() + DOWN * .75) + DOWN * .75)
+        self.play(ShowCreation(alice_bob))
+
+        cindy_circle = Circle(radius=.7).to_edge(
+            RIGHT * 1).to_edge(DOWN * 1).set_fill(RED, opacity=1).set_stroke(RED_E)
+        cindy_label = Text("Cindy").scale(.5).move_to(cindy_circle)
+        self.play(ShowCreation(cindy_circle), ShowCreation(cindy_label))
+
+        bob_cindy = Line(bob_circle.get_edge_center(
+            cindy_circle.get_center() + LEFT * .75) + LEFT * .75, cindy_circle.get_edge_center(
+            bob_circle.get_center() + LEFT * .75) + LEFT * .75)
+        self.play(ShowCreation(bob_cindy))
+
+        david_circle = Circle(radius=.7).to_edge(
+            LEFT * 1).to_edge(DOWN * 1).set_fill(YELLOW, opacity=1).set_stroke(YELLOW_E)
+        david_label = Text("David").scale(.5).move_to(david_circle)
+        self.play(ShowCreation(david_circle), ShowCreation(david_label))
+
+        cindy_david = Line(cindy_circle.get_edge_center(
+            david_circle.get_center() + UP * .75) + UP * .75, david_circle.get_edge_center(
+            cindy_circle.get_center() + UP * .75) + UP * .75)
+        self.play(ShowCreation(cindy_david))
+
+        david_alice = Line(david_circle.get_edge_center(
+            alice_circle.get_center() + RIGHT * .75) + RIGHT * .75, alice_circle.get_edge_center(
+            david_circle.get_center() + RIGHT * .75) + RIGHT * .75)
+        self.play(ShowCreation(david_alice))
+
+        david_bob = Line(david_circle.get_center() + UP * .5 +
+                         RIGHT * .5, bob_circle.get_center() + DOWN * .5 + LEFT * .5)
+        self.play(ShowCreation(david_bob))
+
+
 class Presentation(Scene):
     def construct(self):
         title = Text(
@@ -218,12 +282,264 @@ class Presentation(Scene):
 
         self.wait(3)
 
-        graventheorie = Text("1. Graventheorie").to_edge(UP * 4).scale(.7)
+        graventheorie = Text("1. Grafentheorie").to_edge(UP * 4).scale(.7)
         self.play(Write(graventheorie))
 
         lineair_programmeren = Text(
             "2. Lineair programmeren").to_edge(UP * 6).scale(.7)
         self.play(Write(lineair_programmeren))
+
+        self.wait(2)
+
+        self.play(FadeOut(roostermachine), FadeOut(
+            graventheorie), FadeOut(lineair_programmeren))
+
+        grafentheorie = Text("Grafentheorie").to_edge(UP * 1)
+        self.play(Write(grafentheorie))
+
+        self.wait(4)
+
+        verbanden = Text("Verbanden aanbrengen").to_edge(UP * 4).scale(.7)
+        self.play(Write(verbanden))
+
+        self.wait(4)
+
+        # Voorbeeld vrienden
+        self.play(FadeOut(verbanden), FadeOut(grafentheorie))
+
+        alice_circle = Circle(radius=.7).to_edge(LEFT * 1).to_edge(UP * 1)
+        alice_circle.set_fill(BLUE, opacity=1)
+        alice_circle.set_stroke(BLUE_E)
+        alice_label = Text("Alice").scale(.5)
+        alice_label.move_to(alice_circle)
+
+        self.play(ShowCreation(alice_circle), Write(alice_label))
+
+        bob_circle = Circle(radius=.7).to_edge(
+            RIGHT * 1).to_edge(UP * 1).set_fill(GREEN, opacity=1).set_stroke(GREEN_E)
+        bob_label = Text("Bob").scale(.5).move_to(bob_circle)
+
+        self.play(ShowCreation(bob_circle), Write(bob_label))
+
+        alice_bob = Line(alice_circle.get_edge_center(
+            bob_circle.get_center() + DOWN * .75) + DOWN * .75, bob_circle.get_edge_center(
+            alice_circle.get_center() + DOWN * .75) + DOWN * .75)
+        self.play(ShowCreation(alice_bob))
+
+        cindy_circle = Circle(radius=.7).to_edge(
+            RIGHT * 1).to_edge(DOWN * 1).set_fill(RED, opacity=1).set_stroke(RED_E)
+        cindy_label = Text("Cindy").scale(.5).move_to(cindy_circle)
+        self.play(ShowCreation(cindy_circle), ShowCreation(cindy_label))
+
+        bob_cindy = Line(bob_circle.get_edge_center(
+            cindy_circle.get_center() + LEFT * .75) + LEFT * .75, cindy_circle.get_edge_center(
+            bob_circle.get_center() + LEFT * .75) + LEFT * .75)
+        self.play(ShowCreation(bob_cindy))
+
+        david_circle = Circle(radius=.7).to_edge(
+            LEFT * 1).to_edge(DOWN * 1).set_fill(YELLOW, opacity=1).set_stroke(YELLOW_E)
+        david_label = Text("David").scale(.5).move_to(david_circle)
+        self.play(ShowCreation(david_circle), ShowCreation(david_label))
+
+        cindy_david = Line(cindy_circle.get_edge_center(
+            david_circle.get_center() + UP * .75) + UP * .75, david_circle.get_edge_center(
+            cindy_circle.get_center() + UP * .75) + UP * .75)
+        self.play(ShowCreation(cindy_david))
+
+        self.wait(.5)
+
+        david_alice = Line(david_circle.get_edge_center(
+            alice_circle.get_center() + RIGHT * .75) + RIGHT * .75, alice_circle.get_edge_center(
+            david_circle.get_center() + RIGHT * .75) + RIGHT * .75)
+        self.play(ShowCreation(david_alice))
+
+        david_bob = Line(david_circle.get_center() + UP * .5 +
+                         RIGHT * .5, bob_circle.get_center() + DOWN * .5 + LEFT * .5)
+        self.play(ShowCreation(david_bob))
+
+        self.wait(4)
+
+        cindy_alice_no = DashedLine(cindy_circle.get_center(
+        ) + UP * .5 + LEFT * .5, alice_circle.get_center() + DOWN * .5 + RIGHT * .5, color=RED_E)
+        self.play(ShowCreation(cindy_alice_no))
+
+        self.wait(7)
+
+        self.play(FadeOut(cindy_alice_no))
+
+        cindy_david_purple = cindy_david.set_color(PURPLE)
+        self.play(ShowCreation(cindy_david_purple))
+        david_alice_purple = david_alice.set_color(PURPLE)
+        self.play(ShowCreation(david_alice_purple))
+
+        self.wait(5)
+
+        self.play(FadeOut(alice_circle), FadeOut(alice_label), FadeOut(bob_circle), FadeOut(bob_label), FadeOut(cindy_circle), FadeOut(
+            cindy_label), FadeOut(david_circle), FadeOut(david_label), FadeOut(alice_bob), FadeOut(bob_cindy), FadeOut(cindy_david), FadeOut(david_alice), FadeOut(david_bob))
+
+        grafentheorie_bij_roosteren = Text(
+            "Graftentheorie bij roosteren").to_edge(UP)
+        self.play(Write(grafentheorie_bij_roosteren))
+
+        self.wait(1)
+
+        lessen_verbinden = Text(
+            "Lessen met dezelfde docent of leerling verbinden").scale(.7).to_edge(UP * 4)
+        self.play(Write(lessen_verbinden))
+
+        self.wait(1)
+
+        lessen_kleuren = Text(
+            "Lessen die niet verbonden met elkaar zijn krijgen dezelfde kleur").scale(.7).to_edge(UP * 6)
+        self.play(Write(lessen_kleuren))
+
+        self.wait(3)
+
+        kleuren_minimaliseren = Text(
+            "Kleuren minimaliseren").scale(.7).to_edge(UP * 9)
+        self.play(Write(kleuren_minimaliseren))
+
+        self.wait(3)
+
+        roosteren = Text(
+            "Alle lessen met dezelfde kleur kunnen op hetzelfde moment ingeroosterd worden").scale(.7).to_edge(UP * 11)
+        self.play(Write(roosteren))
+
+        self.wait(6.5)
+
+        self.play(FadeOut(grafentheorie_bij_roosteren), FadeOut(lessen_verbinden), FadeOut(
+            lessen_kleuren), FadeOut(kleuren_minimaliseren), FadeOut(roosteren))
+
+        lineair_programmeren = Text("Lineair programmeren").to_edge(UP)
+        self.play(Write(lineair_programmeren))
+
+        self.wait(2)
+
+        min_max = Text(
+            "Minimaliseren of maximaliseren doelfunctie").scale(.7).to_edge(UP * 4)
+        self.play(Write(min_max))
+
+        self.wait(3)
+
+        voorwaarden_in_acht_nemen = Text(
+            "Voorwaarden in acht nemen").scale(.7).to_edge(UP * 6)
+        self.play(Write(voorwaarden_in_acht_nemen))
+
+        self.wait(4)
+
+        self.play(FadeOut(lineair_programmeren), FadeOut(
+            min_max), FadeOut(voorwaarden_in_acht_nemen))
+
+        timmerman = Text("Timmermanprobleem").to_edge(UP)
+        self.play(Write(timmerman))
+
+        self.wait(3)
+
+        timmerman_uitleg_1 = Text(
+            "Een timmerman kan tafels voor 180 euro verkopen en boekenkasten voor 200 euro")
+
+        timmerman_uitleg_1.to_edge(UP)
+
+        self.play(FadeTransform(timmerman, timmerman_uitleg_1))
+        self.wait(13)
+
+        timmerman_obj_func_text = Text(
+            "Dit kunnen we formuleren in de volgende formule:").to_edge(UP)
+        self.play(FadeTransform(timmerman_uitleg_1, timmerman_obj_func_text))
+        self.wait(1)
+
+        timmerman_obj_func = Tex(
+            "f(x, y) = 180 \cdot x + 200 \cdot y").to_edge(UP * 3)
+        timmerman_obj_func_expl = Text(
+            "Waarbij x het aantal tafels is en y het aantal boekenkasten").to_edge(UP * 5).scale(0.8)
+        self.play(ShowCreation(timmerman_obj_func))
+        self.play(ShowCreation(timmerman_obj_func_expl))
+
+        self.wait(7)
+
+        self.remove(*timmerman_obj_func)
+        self.remove(*timmerman_obj_func_expl)
+        self.play(FadeOut(timmerman_obj_func),
+                  FadeOut(timmerman_obj_func_expl))
+
+        timmerman_uitleg_2 = Text(
+            "Een boekenkast kost 20 eenheden hout en 4 uur aan werktijd").to_edge(UP)
+
+        self.play(FadeTransform(timmerman_obj_func_text, timmerman_uitleg_2))
+        self.wait(2)
+
+        timmerman_uitleg_3 = Text(
+            "Een tafel kost 10 eenheden hout en 5 uur aan werktijd").to_edge(UP)
+
+        self.play(FadeTransform(timmerman_uitleg_2, timmerman_uitleg_3))
+        self.wait(2)
+
+        # Create graph
+        axes = Axes(
+            x_range=[0, 25, 5],
+            y_range=[0, 25, 5],
+            axis_config={"color": BLUE,
+                         "include_numbers": True}
+        )
+
+        # 5x + 4y = 80
+        # 4y = 80 - 5x
+        # y = 20 - 5/4 x
+        graph1 = axes.get_graph(lambda x: 20 - 1.25 * x,
+                                color=WHITE, x_range=[0, 16])
+        graph1_text = Text(
+            "De timmerman mag niet meer dan 80 uur werken", ).to_edge(UP)
+        graph1_text.scale(0.8)
+        self.play(FadeTransform(timmerman_uitleg_3, graph1_text))
+        self.wait(2)
+
+        self.play(ShowCreation(axes))
+
+        graph1_formula = Tex("5 \cdot x + 4 \cdot y = 80").to_edge(UP * 3)
+
+        self.play(ShowCreation(graph1_formula))
+        self.wait(2)
+
+        self.play(ShowCreation(graph1))
+
+        self.wait(2)
+
+        # 10x + 20y = 200
+        # 20y = 200 - 10x
+        # 2y = 20 - x
+        # y = 10 - 1/2 x
+        graph2 = axes.get_graph(lambda x: 10 - 0.5 * x,
+                                x_range=[0, 20], color=RED)
+        graph2_text = Text(
+            "De timmerman mag niet teveel hout gebruiken", ).to_edge(UP).scale(0.8)
+        graph2_formula = Tex("10 \cdot x + 20 \cdot y = 200").to_edge(UP * 3)
+
+        self.play(FadeTransform(graph1_text, graph2_text), FadeTransform(
+            graph1_formula, graph2_formula))
+
+        self.wait(1)
+
+        self.play(ShowCreation(graph2))
+
+        self.wait(2)
+
+        point0 = Dot(color=YELLOW).move_to(
+            axes.coords_to_point(0, 0)).scale(0.5)
+        point1 = Dot(color=YELLOW).move_to(
+            axes.coords_to_point(13 + 1/3, 3 + 1/3)).scale(0.5)
+        point2 = Dot(color=YELLOW).move_to(
+            axes.coords_to_point(0, 10)).scale(0.5)
+        point3 = Dot(color=YELLOW).move_to(
+            axes.coords_to_point(0, 20)).scale(0.5)
+        point4 = Dot(color=YELLOW).move_to(
+            axes.coords_to_point(16, 0)).scale(0.5)
+        point5 = Dot(color=YELLOW).move_to(
+            axes.coords_to_point(20, 0)).scale(0.5)
+
+        self.play(ShowCreation(point0), ShowCreation(point1), ShowCreation(
+            point2), ShowCreation(point3), ShowCreation(point4), ShowCreation(point5))
+
+        dots_text = Text("Een van deze punten zal de maximale waarde zijn")
 
         self.wait(2)
 
