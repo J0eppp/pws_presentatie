@@ -1,6 +1,83 @@
 <?xml version='1.0' encoding='utf-8'?>
 <mlt LC_NUMERIC="C" producer="main_bin" version="7.3.0" root="C:/Users/joepv/pws_presentatie">
  <profile frame_rate_num="25" sample_aspect_num="1" display_aspect_den="9" colorspace="709" progressive="1" description="HD 1080p 25 fps" display_aspect_num="16" frame_rate_den="1" width="1920" height="1080" sample_aspect_den="1"/>
+ <producer id="producer2" in="00:00:00.000" out="00:02:08.000">
+  <property name="length">3201</property>
+  <property name="eof">pause</property>
+  <property name="resource">C:/Users/joepv/OneDrive - Nuovo/PWS 2021 Joep Sam/Intro + roosterprobleem0001.mkv</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">flt</property>
+  <property name="meta.media.0.codec.sample_rate">48000</property>
+  <property name="meta.media.0.codec.channels">1</property>
+  <property name="meta.media.0.codec.name">pcm_f32le</property>
+  <property name="meta.media.0.codec.long_name">PCM 32-bit floating point little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="meta.attr.0.stream.ENCODER.markup">Lavc58.54.100 pcm_f32le</property>
+  <property name="meta.attr.0.stream.DURATION.markup">00:02:08.021000000</property>
+  <property name="meta.attr.ENCODER.markup">Lavf58.29.100</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="mute_on_pause">1</property>
+  <property name="mlt_service">avformat</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:proxy">-</property>
+  <property name="kdenlive:originalurl">C:/Users/joepv/OneDrive - Nuovo/PWS 2021 Joep Sam/Intro + roosterprobleem0001.mkv</property>
+  <property name="kdenlive:id">2</property>
+  <property name="kdenlive:file_size">24623207</property>
+  <property name="kdenlive:file_hash">5f420d828645ed1b6167a789211cbbb3</property>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:audio_max0">216</property>
+ </producer>
+ <producer id="producer4" in="00:00:00.000" out="00:05:10.440">
+  <property name="length">7762</property>
+  <property name="eof">pause</property>
+  <property name="resource">videos/Presentation.mp4</property>
+  <property name="audio_index">-1</property>
+  <property name="video_index">0</property>
+  <property name="mute_on_pause">0</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="seekable">1</property>
+  <property name="aspect_ratio">1</property>
+  <property name="kdenlive:clipname"/>
+  <property name="kdenlive:folderid">-1</property>
+  <property name="kdenlive:id">3</property>
+  <property name="kdenlive:file_size">9016122</property>
+  <property name="kdenlive:orig_service">avformat-novalidate</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">video</property>
+  <property name="meta.media.0.stream.frame_rate">60</property>
+  <property name="meta.media.0.stream.sample_aspect_ratio">0</property>
+  <property name="meta.media.0.codec.width">1920</property>
+  <property name="meta.media.0.codec.height">1080</property>
+  <property name="meta.media.0.codec.rotate">0</property>
+  <property name="meta.media.0.codec.pix_fmt">yuv420p</property>
+  <property name="meta.media.0.codec.sample_aspect_ratio">0</property>
+  <property name="meta.media.0.codec.colorspace">709</property>
+  <property name="meta.media.0.codec.name">h264</property>
+  <property name="meta.media.0.codec.long_name">H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10</property>
+  <property name="meta.media.0.codec.bit_rate">132306</property>
+  <property name="meta.attr.0.stream.handler_name.markup">VideoHandler</property>
+  <property name="meta.attr.0.stream.vendor_id.markup">[0][0][0][0]</property>
+  <property name="meta.attr.major_brand.markup">isom</property>
+  <property name="meta.attr.minor_version.markup">512</property>
+  <property name="meta.attr.compatible_brands.markup">isomiso2avc1mp41</property>
+  <property name="meta.attr.encoder.markup">Lavf59.10.100</property>
+  <property name="meta.media.sample_aspect_num">1</property>
+  <property name="meta.media.sample_aspect_den">1</property>
+  <property name="meta.media.frame_rate_num">60</property>
+  <property name="meta.media.frame_rate_den">1</property>
+  <property name="meta.media.colorspace">709</property>
+  <property name="meta.media.color_trc">2</property>
+  <property name="meta.media.has_b_frames">2</property>
+  <property name="meta.media.width">1920</property>
+  <property name="meta.media.height">1080</property>
+  <property name="meta.media.color_range">mpeg</property>
+  <property name="meta.media.top_field_first">0</property>
+  <property name="meta.media.progressive">1</property>
+  <property name="kdenlive:file_hash">365c77aae781058a1e4140510e67305d</property>
+ </producer>
  <producer id="producer0" in="00:00:00.000" out="00:01:18.520">
   <property name="length">1964</property>
   <property name="eof">pause</property>
@@ -53,35 +130,6 @@
   <property name="kdenlive:folderid">-1</property>
   <property name="kdenlive:audio_max0">214</property>
  </producer>
- <producer id="producer2" in="00:00:00.000" out="00:02:08.000">
-  <property name="length">3201</property>
-  <property name="eof">pause</property>
-  <property name="resource">C:/Users/joepv/OneDrive - Nuovo/PWS 2021 Joep Sam/Intro + roosterprobleem0001.mkv</property>
-  <property name="meta.media.nb_streams">1</property>
-  <property name="meta.media.0.stream.type">audio</property>
-  <property name="meta.media.0.codec.sample_fmt">flt</property>
-  <property name="meta.media.0.codec.sample_rate">48000</property>
-  <property name="meta.media.0.codec.channels">1</property>
-  <property name="meta.media.0.codec.name">pcm_f32le</property>
-  <property name="meta.media.0.codec.long_name">PCM 32-bit floating point little-endian</property>
-  <property name="meta.media.0.codec.bit_rate">1536000</property>
-  <property name="meta.attr.0.stream.ENCODER.markup">Lavc58.54.100 pcm_f32le</property>
-  <property name="meta.attr.0.stream.DURATION.markup">00:02:08.021000000</property>
-  <property name="meta.attr.ENCODER.markup">Lavf58.29.100</property>
-  <property name="seekable">1</property>
-  <property name="audio_index">0</property>
-  <property name="video_index">-1</property>
-  <property name="mute_on_pause">1</property>
-  <property name="mlt_service">avformat</property>
-  <property name="kdenlive:clipname"/>
-  <property name="kdenlive:proxy">-</property>
-  <property name="kdenlive:originalurl">C:/Users/joepv/OneDrive - Nuovo/PWS 2021 Joep Sam/Intro + roosterprobleem0001.mkv</property>
-  <property name="kdenlive:id">2</property>
-  <property name="kdenlive:file_size">24623207</property>
-  <property name="kdenlive:file_hash">5f420d828645ed1b6167a789211cbbb3</property>
-  <property name="kdenlive:folderid">-1</property>
-  <property name="kdenlive:audio_max0">216</property>
- </producer>
  <producer id="producer3" in="00:00:00.000" out="00:00:35.840">
   <property name="length">897</property>
   <property name="eof">pause</property>
@@ -106,67 +154,22 @@
   <property name="kdenlive:file_hash">a40761760c0695393d67554fca316732</property>
   <property name="kdenlive:audio_max0">221</property>
  </producer>
- <producer id="producer4" in="00:00:00.000" out="00:05:10.440">
-  <property name="length">7762</property>
-  <property name="eof">pause</property>
-  <property name="resource">videos/Presentation.mp4</property>
-  <property name="audio_index">-1</property>
-  <property name="video_index">0</property>
-  <property name="mute_on_pause">0</property>
-  <property name="mlt_service">avformat-novalidate</property>
-  <property name="seekable">1</property>
-  <property name="aspect_ratio">1</property>
-  <property name="kdenlive:clipname"/>
-  <property name="kdenlive:folderid">-1</property>
-  <property name="kdenlive:id">3</property>
-  <property name="kdenlive:file_size">3949407</property>
-  <property name="kdenlive:file_hash">73d1c1dfaf86a135d38cfb27902e5e1c</property>
-  <property name="kdenlive:orig_service">avformat-novalidate</property>
-  <property name="meta.media.nb_streams">1</property>
-  <property name="meta.media.0.stream.type">video</property>
-  <property name="meta.media.0.stream.frame_rate">30</property>
-  <property name="meta.media.0.stream.sample_aspect_ratio">0</property>
-  <property name="meta.media.0.codec.width">1920</property>
-  <property name="meta.media.0.codec.height">1080</property>
-  <property name="meta.media.0.codec.rotate">0</property>
-  <property name="meta.media.0.codec.pix_fmt">yuv420p</property>
-  <property name="meta.media.0.codec.sample_aspect_ratio">0</property>
-  <property name="meta.media.0.codec.colorspace">709</property>
-  <property name="meta.media.0.codec.name">h264</property>
-  <property name="meta.media.0.codec.long_name">H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10</property>
-  <property name="meta.media.0.codec.bit_rate">98881</property>
-  <property name="meta.attr.0.stream.handler_name.markup">VideoHandler</property>
-  <property name="meta.attr.0.stream.vendor_id.markup">[0][0][0][0]</property>
-  <property name="meta.attr.major_brand.markup">isom</property>
-  <property name="meta.attr.minor_version.markup">512</property>
-  <property name="meta.attr.compatible_brands.markup">isomiso2avc1mp41</property>
-  <property name="meta.attr.encoder.markup">Lavf59.10.100</property>
-  <property name="meta.media.sample_aspect_num">1</property>
-  <property name="meta.media.sample_aspect_den">1</property>
-  <property name="meta.media.frame_rate_num">30</property>
-  <property name="meta.media.frame_rate_den">1</property>
-  <property name="meta.media.colorspace">709</property>
-  <property name="meta.media.color_trc">2</property>
-  <property name="meta.media.has_b_frames">2</property>
-  <property name="meta.media.width">1920</property>
-  <property name="meta.media.height">1080</property>
-  <property name="meta.media.color_range">mpeg</property>
-  <property name="meta.media.top_field_first">0</property>
-  <property name="meta.media.progressive">1</property>
- </producer>
  <producer id="producer5" in="00:00:00.000" out="00:01:53.080">
   <property name="length">2828</property>
   <property name="eof">pause</property>
   <property name="resource">C:/Users/joepv/OneDrive - Nuovo/PWS 2021 Joep Sam/pws_presentatie_discussie0001.mkv</property>
   <property name="meta.media.nb_streams">1</property>
   <property name="meta.media.0.stream.type">audio</property>
-  <property name="meta.media.0.codec.sample_fmt">fltp</property>
+  <property name="meta.media.0.codec.sample_fmt">flt</property>
   <property name="meta.media.0.codec.sample_rate">48000</property>
   <property name="meta.media.0.codec.channels">1</property>
-  <property name="meta.media.0.codec.name">aac</property>
-  <property name="meta.media.0.codec.long_name">AAC (Advanced Audio Coding)</property>
-  <property name="meta.media.0.codec.bit_rate">98625</property>
-  <property name="seekable">0</property>
+  <property name="meta.media.0.codec.name">pcm_f32le</property>
+  <property name="meta.media.0.codec.long_name">PCM 32-bit floating point little-endian</property>
+  <property name="meta.media.0.codec.bit_rate">1536000</property>
+  <property name="meta.attr.0.stream.ENCODER.markup">Lavc58.134.100 pcm_f32le</property>
+  <property name="meta.attr.0.stream.DURATION.markup">00:01:53.109000000</property>
+  <property name="meta.attr.ENCODER.markup">Lavf58.76.100</property>
+  <property name="seekable">1</property>
   <property name="audio_index">0</property>
   <property name="video_index">-1</property>
   <property name="mute_on_pause">1</property>
@@ -174,14 +177,14 @@
   <property name="kdenlive:clipname">pws_presentatie_discussie0001.mkv</property>
   <property name="kdenlive:folderid">-1</property>
   <property name="kdenlive:id">7</property>
-  <property name="kdenlive:file_size">1394483</property>
-  <property name="kdenlive:file_hash">aa759de3bdd6b1f75455dec3596686be</property>
+  <property name="kdenlive:file_size">21755512</property>
   <property name="kdenlive:audio_max0">206</property>
+  <property name="kdenlive:file_hash">978a9c9509b5e9c04da87323295889d0</property>
  </producer>
  <playlist id="main_bin">
   <property name="kdenlive:docproperties.activeTrack">1</property>
   <property name="kdenlive:docproperties.audioChannels">2</property>
-  <property name="kdenlive:docproperties.audioTarget">0</property>
+  <property name="kdenlive:docproperties.audioTarget">-1</property>
   <property name="kdenlive:docproperties.disablepreview">0</property>
   <property name="kdenlive:docproperties.documentid">1640296867073</property>
   <property name="kdenlive:docproperties.enableTimelineZone">0</property>
@@ -193,8 +196,8 @@
   <property name="kdenlive:docproperties.groups">[
 ]
 </property>
-  <property name="kdenlive:docproperties.guides">[&#xd;&#xd;
-]&#xd;&#xd;
+  <property name="kdenlive:docproperties.guides">[&#xd;&#xd;&#xd;
+]&#xd;&#xd;&#xd;
 </property>
   <property name="kdenlive:docproperties.kdenliveversion">21.12.0</property>
   <property name="kdenlive:docproperties.position">7752</property>
@@ -228,7 +231,7 @@
   <property name="kdenlive:docproperties.rendertwopass">0</property>
   <property name="kdenlive:docproperties.renderurl">C:/Users/joepv/Videos/pws_presentatie.mp4</property>
   <property name="kdenlive:docproperties.renderzone">0</property>
-  <property name="kdenlive:docproperties.scrollPos">0</property>
+  <property name="kdenlive:docproperties.scrollPos">161</property>
   <property name="kdenlive:docproperties.seekOffset">30000</property>
   <property name="kdenlive:docproperties.version">1.04</property>
   <property name="kdenlive:docproperties.verticalzoom">1</property>
@@ -239,11 +242,11 @@
   <property name="kdenlive:expandedFolders"/>
   <property name="kdenlive:documentnotes"/>
   <property name="xml_retain">1</property>
+  <entry producer="producer2" in="00:00:00.000" out="00:02:08.000"/>
+  <entry producer="producer4" in="00:00:00.000" out="00:05:10.440"/>
   <entry producer="producer0" in="00:00:00.000" out="00:01:18.520"/>
   <entry producer="producer1" in="00:00:00.000" out="00:01:59.320"/>
-  <entry producer="producer2" in="00:00:00.000" out="00:02:08.000"/>
   <entry producer="producer3" in="00:00:00.000" out="00:00:35.840"/>
-  <entry producer="producer4" in="00:00:00.000" out="00:05:10.440"/>
   <entry producer="producer5" in="00:00:00.000" out="00:01:53.080"/>
  </playlist>
  <producer id="black_track" in="00:00:00.000" out="00:25:10.480">
@@ -259,6 +262,10 @@
   <property name="length">3201</property>
   <property name="eof">pause</property>
   <property name="resource">C:/Users/joepv/OneDrive - Nuovo/PWS 2021 Joep Sam/Intro + roosterprobleem0001.mkv</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="mute_on_pause">0</property>
+  <property name="mlt_service">avformat-novalidate</property>
   <property name="meta.media.nb_streams">1</property>
   <property name="meta.media.0.stream.type">audio</property>
   <property name="meta.media.0.codec.sample_fmt">flt</property>
@@ -271,10 +278,6 @@
   <property name="meta.attr.0.stream.DURATION.markup">00:02:08.021000000</property>
   <property name="meta.attr.ENCODER.markup">Lavf58.29.100</property>
   <property name="seekable">1</property>
-  <property name="audio_index">0</property>
-  <property name="video_index">-1</property>
-  <property name="mute_on_pause">0</property>
-  <property name="mlt_service">avformat-novalidate</property>
   <property name="kdenlive:clipname"/>
   <property name="kdenlive:proxy">-</property>
   <property name="kdenlive:originalurl">C:/Users/joepv/OneDrive - Nuovo/PWS 2021 Joep Sam/Intro + roosterprobleem0001.mkv</property>
@@ -290,6 +293,10 @@
   <property name="length">1964</property>
   <property name="eof">pause</property>
   <property name="resource">C:/Users/joepv/OneDrive - Nuovo/PWS 2021 Joep Sam/pws_presentatie_roosteringsmachine_en_graventheorie.wav</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="mute_on_pause">0</property>
+  <property name="mlt_service">avformat-novalidate</property>
   <property name="meta.media.nb_streams">1</property>
   <property name="meta.media.0.stream.type">audio</property>
   <property name="meta.media.0.codec.sample_fmt">s16</property>
@@ -299,10 +306,6 @@
   <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
   <property name="meta.media.0.codec.bit_rate">1411200</property>
   <property name="seekable">1</property>
-  <property name="audio_index">0</property>
-  <property name="video_index">-1</property>
-  <property name="mute_on_pause">0</property>
-  <property name="mlt_service">avformat-novalidate</property>
   <property name="kdenlive:clipname"/>
   <property name="kdenlive:proxy">-</property>
   <property name="kdenlive:originalurl">C:/Users/joepv/OneDrive - Nuovo/PWS 2021 Joep Sam/pws_presentatie_roosteringsmachine_en_graventheorie.wav</property>
@@ -318,6 +321,10 @@
   <property name="length">2984</property>
   <property name="eof">pause</property>
   <property name="resource">C:/Users/joepv/OneDrive - Nuovo/PWS 2021 Joep Sam/pws_presentatie_lineair_programmeren.wav</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="mute_on_pause">0</property>
+  <property name="mlt_service">avformat-novalidate</property>
   <property name="meta.media.nb_streams">1</property>
   <property name="meta.media.0.stream.type">audio</property>
   <property name="meta.media.0.codec.sample_fmt">s16</property>
@@ -327,10 +334,6 @@
   <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
   <property name="meta.media.0.codec.bit_rate">1411200</property>
   <property name="seekable">1</property>
-  <property name="audio_index">0</property>
-  <property name="video_index">-1</property>
-  <property name="mute_on_pause">0</property>
-  <property name="mlt_service">avformat-novalidate</property>
   <property name="kdenlive:clipname"/>
   <property name="kdenlive:proxy">-</property>
   <property name="kdenlive:originalurl">C:/Users/joepv/OneDrive - Nuovo/PWS 2021 Joep Sam/pws_presentatie_lineair_programmeren.wav</property>
@@ -346,6 +349,10 @@
   <property name="length">897</property>
   <property name="eof">pause</property>
   <property name="resource">C:/Users/joepv/OneDrive - Nuovo/PWS 2021 Joep Sam/pws_presentatie_roostermachine.wav</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="mute_on_pause">0</property>
+  <property name="mlt_service">avformat-novalidate</property>
   <property name="meta.media.nb_streams">1</property>
   <property name="meta.media.0.stream.type">audio</property>
   <property name="meta.media.0.codec.sample_fmt">s16</property>
@@ -355,10 +362,6 @@
   <property name="meta.media.0.codec.long_name">PCM signed 16-bit little-endian</property>
   <property name="meta.media.0.codec.bit_rate">1411200</property>
   <property name="seekable">1</property>
-  <property name="audio_index">0</property>
-  <property name="video_index">-1</property>
-  <property name="mute_on_pause">0</property>
-  <property name="mlt_service">avformat-novalidate</property>
   <property name="kdenlive:clipname"/>
   <property name="kdenlive:folderid">-1</property>
   <property name="kdenlive:id">6</property>
@@ -440,7 +443,7 @@
   <property name="xml">was here</property>
   <property name="meta.media.nb_streams">1</property>
   <property name="meta.media.0.stream.type">video</property>
-  <property name="meta.media.0.stream.frame_rate">30</property>
+  <property name="meta.media.0.stream.frame_rate">60</property>
   <property name="meta.media.0.stream.sample_aspect_ratio">0</property>
   <property name="meta.media.0.codec.width">1920</property>
   <property name="meta.media.0.codec.height">1080</property>
@@ -450,7 +453,7 @@
   <property name="meta.media.0.codec.colorspace">709</property>
   <property name="meta.media.0.codec.name">h264</property>
   <property name="meta.media.0.codec.long_name">H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10</property>
-  <property name="meta.media.0.codec.bit_rate">98881</property>
+  <property name="meta.media.0.codec.bit_rate">132306</property>
   <property name="meta.attr.0.stream.handler_name.markup">VideoHandler</property>
   <property name="meta.attr.0.stream.vendor_id.markup">[0][0][0][0]</property>
   <property name="meta.attr.major_brand.markup">isom</property>
@@ -459,7 +462,7 @@
   <property name="meta.attr.encoder.markup">Lavf59.10.100</property>
   <property name="meta.media.sample_aspect_num">1</property>
   <property name="meta.media.sample_aspect_den">1</property>
-  <property name="meta.media.frame_rate_num">30</property>
+  <property name="meta.media.frame_rate_num">60</property>
   <property name="meta.media.frame_rate_den">1</property>
   <property name="meta.media.colorspace">709</property>
   <property name="meta.media.color_trc">2</property>

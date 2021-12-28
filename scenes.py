@@ -270,7 +270,8 @@ class Presentation(Scene):
 
         self.wait(2)
 
-        eigen_algoritme = Text("Ontwerpen eigen algoritme").to_edge(UP * 4).scale(.7)
+        eigen_algoritme = Text(
+            "Ontwerpen eigen algoritme").to_edge(UP * 4).scale(.7)
         self.play(Write(eigen_algoritme))
 
         self.wait(4)
@@ -643,7 +644,6 @@ class Presentation(Scene):
 
         self.play(FadeOut(conclusie_1), FadeOut(bar))
 
-
         conclusie_2 = Text(
             "Aantal negende uren bij 2 docenten per vak").to_edge(UP * 3).scale(.7)
         self.play(Write(conclusie_2))
@@ -676,7 +676,6 @@ class Presentation(Scene):
         conclusie_3 = Text(
             "Aantal tussenuren bij 3 docenten per vak").to_edge(UP * 3).scale(.7)
         self.play(Write(conclusie_3))
-
 
         staafdiagram3 = [0.38, 0.38, 1.75, 0.38, 3.00, 0.17]
         inhoudstaafdiagram3 = [
@@ -746,28 +745,26 @@ class Presentation(Scene):
         self.wait(20)
 
         discussie_2 = Text(
-            "niet goed geweten wat te doen, indien betere inlezing mogelijk meer resultaat").to_edge(UP * 5).scale(.7)
+            "Niet goed geweten wat te doen, indien betere inlezing mogelijk meer resultaat").to_edge(UP * 5).scale(.7)
         self.play(Write(discussie_2))
         self.wait(25)
 
         discussie_3 = Text(
-            "Alleen onderbouw, geen bovenbouw. Geen lokalen.").to_edge(UP * 8).scale(.7)
+            "Alleen onderbouw, geen bovenbouw. Geen lokalen").to_edge(UP * 8).scale(.7)
         self.play(Write(discussie_3))
         self.wait(20)
 
         discussie_4 = Text(
-            "aanname docent is fulltimer en mag elk werkuur lesgeven.").to_edge(UP * 10).scale(.7)
+            "Aanname docent is fulltimer en mag elk werkuur lesgeven").to_edge(UP * 10).scale(.7)
         self.play(Write(discussie_4))
         self.wait(4)
 
         discussie_5 = Text(
-            "maar 2 leerlingen voor voorkeur leerling").to_edge(UP * 13).scale(.8)
+            "Maar 2 leerlingen voor voorkeur leerling").to_edge(UP * 13).scale(.8)
         self.play(Write(discussie_5))
 
-
-
-
-        self.play(FadeOut(discussie), FadeOut(discussie_1), FadeOut(discussie_2),FadeOut(discussie_3), FadeOut(discussie_4), FadeOut(discussie_5))
+        self.play(FadeOut(discussie), FadeOut(discussie_1), FadeOut(
+            discussie_2), FadeOut(discussie_3), FadeOut(discussie_4), FadeOut(discussie_5))
 
         conclusie = Text("Conclusie").to_edge(UP * 1)
         self.play(Write(conclusie))
@@ -775,7 +772,8 @@ class Presentation(Scene):
         self.play(ShowCreation(bar.scale(.6).to_edge(UP * 2).to_edge(LEFT)),
                   ShowCreation(bar2.scale(.6).to_edge(UP * 2).to_edge(
                       RIGHT)), ShowCreation(bar3.scale(.6).to_edge(DOWN * 1).to_edge(LEFT)),
-                  ShowCreation(bar4.scale(.6).to_edge(DOWN * 1).to_edge(RIGHT)),
+                  ShowCreation(bar4.scale(.6).to_edge(
+                      DOWN * 1).to_edge(RIGHT)),
                   Write(bar_title.scale(.5).to_edge(UP).to_edge(LEFT)),
                   Write(bar2_title.scale(.5).to_edge(UP).to_edge(RIGHT)),
                   Write(bar3_title.scale(.5).to_edge(DOWN * 7).to_edge(LEFT)),
@@ -788,16 +786,17 @@ class Presentation(Scene):
                   FadeOut(bar4.scale(.6).to_edge(DOWN * 1).to_edge(RIGHT)),
                   FadeOut(bar_title.scale(.5).to_edge(UP).to_edge(LEFT)),
                   FadeOut(bar2_title.scale(.5).to_edge(UP).to_edge(RIGHT)),
-                  FadeOut(bar3_title.scale(.5).to_edge(DOWN * 7).to_edge(LEFT)),
+                  FadeOut(bar3_title.scale(.5).to_edge(
+                      DOWN * 7).to_edge(LEFT)),
                   FadeOut(bar4_title.scale(.5).to_edge(DOWN * 7).to_edge(RIGHT)))
 
-
-        TerugkoppelingHoofdvraag = Text("Terugkoppeling hoofdvraag").to_edge(UP * 1)
+        TerugkoppelingHoofdvraag = Text(
+            "Terugkoppeling hoofdvraag").to_edge(UP * 1)
         self.play(Write(TerugkoppelingHoofdvraag))
         jamaar = Text("Ja, dit kan, maar complex").to_edge(
             UP * 6).scale(.8)
         self.play(Write(jamaar))
-        jamaar = Text("discussiepunten (niet de volle 1000 mans school), desalniettemin aangetoont hoe het zou kunnen").to_edge(
+        jamaar = Text("Discussiepunten (niet de volle 1000 mans school), desalniettemin aangetoont hoe het zou kunnen").to_edge(
             UP * 10).scale(.8)
         self.play(Write(jamaar))
         self.wait(25)
