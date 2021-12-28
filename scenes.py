@@ -767,7 +767,7 @@ class Presentation(Scene):
 
 
 
-        self.play(FadeOut(discussie_1), FadeOut(discussie_2),FadeOut(discussie_3), FadeOut(discussie_4), FadeOut(discussie_5))
+        self.play(FadeOut(discussie), FadeOut(discussie_1), FadeOut(discussie_2),FadeOut(discussie_3), FadeOut(discussie_4), FadeOut(discussie_5))
 
         conclusie = Text("Conclusie").to_edge(UP * 1)
         self.play(Write(conclusie))
@@ -791,12 +791,13 @@ class Presentation(Scene):
                   FadeOut(bar3_title.scale(.5).to_edge(DOWN * 7).to_edge(LEFT)),
                   FadeOut(bar4_title.scale(.5).to_edge(DOWN * 7).to_edge(RIGHT)))
 
+
         TerugkoppelingHoofdvraag = Text("Terugkoppeling hoofdvraag").to_edge(UP * 1)
         self.play(Write(TerugkoppelingHoofdvraag))
         jamaar = Text("Ja, dit kan, maar complex").to_edge(
             UP * 6).scale(.8)
         self.play(Write(jamaar))
         jamaar = Text("discussiepunten (niet de volle 1000 mans school), desalniettemin aangetoont hoe het zou kunnen").to_edge(
-            UP * 4).scale(.8)
+            UP * 10).scale(.8)
         self.play(Write(jamaar))
         self.wait(25)
