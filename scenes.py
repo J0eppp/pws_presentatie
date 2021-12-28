@@ -568,90 +568,48 @@ class Presentation(Scene):
         self.play(FadeOut(axes), FadeOut(solution), FadeOut(solution_label), FadeOut(
             graph2), FadeOut(graph2_formula), FadeOut(graph1))
 
-        # timmerman_uitleg_2 = Text(
-        #     "Een boekenkast kost 20 eenheden hout en 4 uur aan werktijd").to_edge(UP)
+        self.wait(3)
 
-        # self.play(FadeTransform(timmerman_obj_func_text, timmerman_uitleg_2))
-        # self.wait(6)
+        roostermachine = Text("Roostermachine").to_edge(UP)
+        self.play(Write(roostermachine))
 
-        # timmerman_uitleg_3 = Text(
-        #     "Een tafel kost 10 eenheden hout en 5 uur aan werktijd").to_edge(UP)
+        self.wait(1)
 
-        # self.play(FadeTransform(timmerman_uitleg_2, timmerman_uitleg_3))
-        # self.wait(2)
-
-        # # Create graph
-        # axes = Axes(
-        #     x_range=[0, 25, 5],
-        #     y_range=[0, 25, 5],
-        #     axis_config={"color": BLUE,
-        #                  "include_numbers": True}
-        # )
-
-        # # 5x + 4y = 80
-        # # 4y = 80 - 5x
-        # # y = 20 - 5/4 x
-        # graph1 = axes.get_graph(lambda x: 20 - 1.25 * x,
-        #                         color=WHITE, x_range=[0, 16])
-        # graph1_text = Text(
-        #     "De timmerman mag niet meer dan 80 uur werken", ).to_edge(UP)
-        # graph1_text.scale(0.8)
-        # self.play(FadeTransform(timmerman_uitleg_3, graph1_text))
-        # self.wait(2)
-
-        # self.play(ShowCreation(axes))
-
-        # graph1_formula = Tex("5 \cdot x + 4 \cdot y = 80").to_edge(UP * 3)
-
-        # self.play(ShowCreation(graph1_formula))
-        # self.wait(2)
-
-        # self.play(ShowCreation(graph1))
-
-        # self.wait(2)
-
-        # # 10x + 20y = 200
-        # # 20y = 200 - 10x
-        # # 2y = 20 - x
-        # # y = 10 - 1/2 x
-        # graph2 = axes.get_graph(lambda x: 10 - 0.5 * x,
-        #                         x_range=[0, 20], color=RED)
-        # graph2_text = Text(
-        #     "De timmerman mag niet teveel hout gebruiken", ).to_edge(UP).scale(0.8)
-        # graph2_formula = Tex("10 \cdot x + 20 \cdot y = 200").to_edge(UP * 3)
-
-        # self.play(FadeTransform(graph1_text, graph2_text), FadeTransform(
-        #     graph1_formula, graph2_formula))
-
-        # self.wait(1)
-
-        # self.play(ShowCreation(graph2))
-
-        # self.wait(2)
-
-        # point0 = Dot(color=YELLOW).move_to(
-        #     axes.coords_to_point(0, 0)).scale(0.5)
-        # point1 = Dot(color=YELLOW).move_to(
-        #     axes.coords_to_point(13 + 1/3, 3 + 1/3)).scale(0.5)
-        # point2 = Dot(color=YELLOW).move_to(
-        #     axes.coords_to_point(0, 10)).scale(0.5)
-        # point3 = Dot(color=YELLOW).move_to(
-        #     axes.coords_to_point(0, 20)).scale(0.5)
-        # point4 = Dot(color=YELLOW).move_to(
-        #     axes.coords_to_point(16, 0)).scale(0.5)
-        # point5 = Dot(color=YELLOW).move_to(
-        #     axes.coords_to_point(20, 0)).scale(0.5)
-
-        # self.play(ShowCreation(point0), ShowCreation(point1), ShowCreation(
-        #     point2), ShowCreation(point3), ShowCreation(point4), ShowCreation(point5))
-
-        # dots_text = Text("Een van deze punten zal de maximale waarde zijn")
+        rm_lp = Text("Lineair programmeren").scale(.7).to_edge(UP * 4)
+        self.play(Write(rm_lp))
 
         self.wait(2)
 
-        return
+        rm_voorwaarde_2_lessen = Text(
+            "Eén les tegelijk").scale(.7).to_edge(UP * 6)
+        self.play(Write(rm_voorwaarde_2_lessen))
 
-        conclusie = Text("Resultaten en Conclusie").to_edge(UP * 1)
+        self.wait(2)
+
+        rm_voorwaarde_alle_lessen = Text(
+            "Alle lessen moeten gegeven worden").scale(.7).to_edge(UP * 8)
+        self.play(Write(rm_voorwaarde_alle_lessen))
+
+        self.wait(3)
+
+        rm_doelfunctie = Text(
+            "Totale uurwaarde minimaliseren").scale(.8).to_edge(UP * 10)
+        self.play(Write(rm_doelfunctie))
+
+        self.wait(7)
+
+        self.play(FadeOut(rm_lp), FadeOut(rm_voorwaarde_2_lessen), FadeOut(
+            rm_voorwaarde_alle_lessen), FadeOut(rm_doelfunctie))
+
+        doel = Text(
+            "Leerlingen zijn zo vroeg mogelijk uit en hebben indirect zo min mogelijk tussenuren").scale(.8).to_edge(UP * 4)
+        self.play(Write(doel))
+
+        self.wait(7)
+
+        self.play(FadeOut(roostermachine), FadeOut(doel))
+
+        conclusie = Text("Resultaten en conclusie").to_edge(UP * 1)
         self.play(Write(conclusie))
 
         conclusie_1 = Text(
@@ -679,7 +637,7 @@ class Presentation(Scene):
             bar_names=inhoudstaafdiagram1,
             bar_label_scale_val=.4,
         ).to_edge(UP * 6).scale(1)
-        self.add(bar)
+        self.play(ShowCreation(bar))
 
         self.wait(2)
 
@@ -710,7 +668,7 @@ class Presentation(Scene):
             bar_names=inhoudstaafdiagram2,
             bar_label_scale_val=.4,
         ).to_edge(UP * 6).scale(1)
-        self.add(bar2)
+        self.play(ShowCreaton(bar2))
 
         self.wait(2)
         self.play(FadeOut(conclusie_2), FadeOut(bar2))
@@ -740,7 +698,7 @@ class Presentation(Scene):
             bar_names=inhoudstaafdiagram3,
             bar_label_scale_val=.4,
         ).to_edge(UP * 6).scale(1)
-        self.add(bar3)
+        self.play(ShowCreation(bar3))
 
         self.wait(2)
 
@@ -771,7 +729,7 @@ class Presentation(Scene):
             bar_names=inhoudstaafdiagram4,
             bar_label_scale_val=.4,
         ).to_edge(UP * 6).scale(1)
-        self.add(bar4)
+        self.play(ShowCreation(bar4))
 
         self.wait(2)
         self.play(FadeOut(conclusie), FadeOut(conclusie_4), FadeOut(bar4))
@@ -780,7 +738,7 @@ class Presentation(Scene):
         self.play(Write(discussie))
 
         discussie_1 = Text(
-            "Maatschappelijk signiviciant, maar niet heel relevant").to_edge(UP * 3).scale(.7)
+            "Maatschappelijk significiant, maar niet heel relevant").to_edge(UP * 3).scale(.7)
         self.play(Write(discussie_1))
 
         discussie_2 = Text(

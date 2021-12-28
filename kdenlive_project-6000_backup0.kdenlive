@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <mlt LC_NUMERIC="C" producer="main_bin" version="7.3.0" root="C:/Users/joepv/pws_presentatie">
- <profile frame_rate_num="25" sample_aspect_num="1" display_aspect_den="9" colorspace="709" progressive="1" description="HD 1080p 25 fps" display_aspect_num="16" frame_rate_den="1" width="1920" height="1080" sample_aspect_den="1"/>
+ <profile frame_rate_num="60" sample_aspect_num="1" display_aspect_den="9" colorspace="709" progressive="1" description="HD 1080p 60 fps" display_aspect_num="16" frame_rate_den="1" width="1920" height="1080" sample_aspect_den="1"/>
  <producer id="producer0" in="00:00:00.000" out="00:01:18.520">
-  <property name="length">1964</property>
+  <property name="length">00:01:18.560</property>
   <property name="eof">pause</property>
   <property name="resource">C:/Users/joepv/OneDrive - Nuovo/PWS 2021 Joep Sam/pws_presentatie_roosteringsmachine_en_graventheorie.wav</property>
   <property name="meta.media.nb_streams">1</property>
@@ -28,7 +28,7 @@
   <property name="kdenlive:audio_max0">205</property>
  </producer>
  <producer id="producer1" in="00:00:00.000" out="00:01:59.320">
-  <property name="length">2984</property>
+  <property name="length">00:01:59.360</property>
   <property name="eof">pause</property>
   <property name="resource">C:/Users/joepv/OneDrive - Nuovo/PWS 2021 Joep Sam/pws_presentatie_lineair_programmeren.wav</property>
   <property name="meta.media.nb_streams">1</property>
@@ -54,7 +54,7 @@
   <property name="kdenlive:audio_max0">214</property>
  </producer>
  <producer id="producer2" in="00:00:00.000" out="00:02:08.000">
-  <property name="length">3201</property>
+  <property name="length">00:02:08.040</property>
   <property name="eof">pause</property>
   <property name="resource">C:/Users/joepv/OneDrive - Nuovo/PWS 2021 Joep Sam/Intro + roosterprobleem0001.mkv</property>
   <property name="meta.media.nb_streams">1</property>
@@ -83,7 +83,7 @@
   <property name="kdenlive:audio_max0">216</property>
  </producer>
  <producer id="producer3" in="00:00:00.000" out="00:00:35.840">
-  <property name="length">897</property>
+  <property name="length">00:00:35.880</property>
   <property name="eof">pause</property>
   <property name="resource">C:/Users/joepv/OneDrive - Nuovo/PWS 2021 Joep Sam/pws_presentatie_roostermachine.wav</property>
   <property name="meta.media.nb_streams">1</property>
@@ -107,7 +107,7 @@
   <property name="kdenlive:audio_max0">221</property>
  </producer>
  <producer id="producer4" in="00:00:00.000" out="00:05:10.440">
-  <property name="length">7762</property>
+  <property name="length">00:05:10.480</property>
   <property name="eof">pause</property>
   <property name="resource">videos/Presentation.mp4</property>
   <property name="audio_index">-1</property>
@@ -155,7 +155,7 @@
   <property name="meta.media.progressive">1</property>
  </producer>
  <producer id="producer5" in="00:00:00.000" out="00:01:53.080">
-  <property name="length">2828</property>
+  <property name="length">00:01:53.120</property>
   <property name="eof">pause</property>
   <property name="resource">C:/Users/joepv/OneDrive - Nuovo/PWS 2021 Joep Sam/pws_presentatie_discussie0001.mkv</property>
   <property name="meta.media.nb_streams">1</property>
@@ -190,17 +190,17 @@
   <property name="kdenlive:docproperties.externalproxyparams"/>
   <property name="kdenlive:docproperties.generateimageproxy">0</property>
   <property name="kdenlive:docproperties.generateproxy">0</property>
-  <property name="kdenlive:docproperties.groups">[
-]
+  <property name="kdenlive:docproperties.groups">[&#xd;
+]&#xd;
 </property>
-  <property name="kdenlive:docproperties.guides">[&#xd;&#xd;
-]&#xd;&#xd;
+  <property name="kdenlive:docproperties.guides">[
+]
 </property>
   <property name="kdenlive:docproperties.kdenliveversion">21.12.0</property>
   <property name="kdenlive:docproperties.position">7752</property>
   <property name="kdenlive:docproperties.previewextension"/>
   <property name="kdenlive:docproperties.previewparameters"/>
-  <property name="kdenlive:docproperties.profile">atsc_1080p_25</property>
+  <property name="kdenlive:docproperties.profile">atsc_1080p_60</property>
   <property name="kdenlive:docproperties.proxyextension"/>
   <property name="kdenlive:docproperties.proxyimageminsize">2000</property>
   <property name="kdenlive:docproperties.proxyimagesize">800</property>
@@ -247,7 +247,7 @@
   <entry producer="producer5" in="00:00:00.000" out="00:01:53.080"/>
  </playlist>
  <producer id="black_track" in="00:00:00.000" out="00:25:10.480">
-  <property name="length">2147483647</property>
+  <property name="length">23860:55:45.880</property>
   <property name="eof">continue</property>
   <property name="resource">black</property>
   <property name="aspect_ratio">1</property>
@@ -256,7 +256,7 @@
   <property name="set.test_audio">0</property>
  </producer>
  <producer id="producer6" in="00:00:00.000" out="00:02:08.000">
-  <property name="length">3201</property>
+  <property name="length">00:02:08.040</property>
   <property name="eof">pause</property>
   <property name="resource">C:/Users/joepv/OneDrive - Nuovo/PWS 2021 Joep Sam/Intro + roosterprobleem0001.mkv</property>
   <property name="meta.media.nb_streams">1</property>
@@ -287,7 +287,7 @@
   <property name="set.test_image">1</property>
  </producer>
  <producer id="producer7" in="00:00:00.000" out="00:01:18.520">
-  <property name="length">1964</property>
+  <property name="length">00:01:18.560</property>
   <property name="eof">pause</property>
   <property name="resource">C:/Users/joepv/OneDrive - Nuovo/PWS 2021 Joep Sam/pws_presentatie_roosteringsmachine_en_graventheorie.wav</property>
   <property name="meta.media.nb_streams">1</property>
@@ -315,7 +315,7 @@
   <property name="set.test_image">1</property>
  </producer>
  <producer id="producer8" in="00:00:00.000" out="00:01:59.320">
-  <property name="length">2984</property>
+  <property name="length">00:01:59.360</property>
   <property name="eof">pause</property>
   <property name="resource">C:/Users/joepv/OneDrive - Nuovo/PWS 2021 Joep Sam/pws_presentatie_lineair_programmeren.wav</property>
   <property name="meta.media.nb_streams">1</property>
@@ -343,7 +343,7 @@
   <property name="set.test_image">1</property>
  </producer>
  <producer id="producer9" in="00:00:00.000" out="00:00:35.840">
-  <property name="length">897</property>
+  <property name="length">00:00:35.880</property>
   <property name="eof">pause</property>
   <property name="resource">C:/Users/joepv/OneDrive - Nuovo/PWS 2021 Joep Sam/pws_presentatie_roostermachine.wav</property>
   <property name="meta.media.nb_streams">1</property>
@@ -422,7 +422,7 @@
   </filter>
  </tractor>
  <producer id="producer10" in="00:00:00.000" out="00:05:10.440">
-  <property name="length">7762</property>
+  <property name="length">00:05:10.480</property>
   <property name="eof">pause</property>
   <property name="resource">videos/Presentation.mp4</property>
   <property name="audio_index">-1</property>
