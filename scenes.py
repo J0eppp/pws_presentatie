@@ -270,7 +270,7 @@ class Presentation(Scene):
 
         self.wait(2)
 
-        eigen_algoritme = Text("Ontwerpen eigen algoritme").to_edge(UP * 4)
+        eigen_algoritme = Text("Ontwerpen eigen algoritme").to_edge(UP * 4).scale(.7)
         self.play(Write(eigen_algoritme))
 
         self.wait(4)
@@ -609,8 +609,8 @@ class Presentation(Scene):
 
         self.play(FadeOut(roostermachine), FadeOut(doel))
 
-        conclusie = Text("Resultaten en conclusie").to_edge(UP * 1)
-        self.play(Write(conclusie))
+        resultaten = Text("Resultaten").to_edge(UP * 1)
+        self.play(Write(resultaten))
         self.wait(1)
 
         conclusie_1 = Text(
@@ -734,12 +734,7 @@ class Presentation(Scene):
         self.play(ShowCreation(bar4))
 
         self.wait(2)
-        self.play(FadeOut(conclusie), FadeOut(conclusie_4), FadeOut(bar4))
-
-        self.play(ShowCreation(bar.scale(.6).to_edge(UP * 2).to_edge(LEFT)), ShowCreation(bar2.scale(.6).to_edge(UP * 2).to_edge(
-            RIGHT)), ShowCreation(bar3.scale(.6).to_edge(DOWN * 1).to_edge(LEFT)), ShowCreation(bar4.scale(.6).to_edge(DOWN * 1).to_edge(RIGHT)), Write(bar_title.scale(.5).to_edge(UP).to_edge(LEFT)), Write(bar2_title.scale(.5).to_edge(UP).to_edge(RIGHT)), Write(bar3_title.scale(.5).to_edge(DOWN * 7).to_edge(LEFT)), Write(bar4_title.scale(.5).to_edge(DOWN * 7).to_edge(RIGHT)))
-
-        return
+        self.play(FadeOut(resultaten), FadeOut(conclusie_4), FadeOut(bar4))
 
         discussie = Text("Discussie").to_edge(UP * 1)
         self.play(Write(discussie))
@@ -770,48 +765,38 @@ class Presentation(Scene):
         self.play(Write(discussie_5))
 
 
-        on_screen.append(temp)
-        self.wait(1)
-        temp = Text("Een klas moet per vak dezelfde docent hebben").to_edge(
+
+
+        self.play(FadeOut(discussie_1), FadeOut(discussie_2),FadeOut(discussie_3), FadeOut(discussie_4), FadeOut(discussie_5))
+
+        conclusie = Text("Conclusie").to_edge(UP * 1)
+        self.play(Write(conclusie))
+
+        self.play(ShowCreation(bar.scale(.6).to_edge(UP * 2).to_edge(LEFT)),
+                  ShowCreation(bar2.scale(.6).to_edge(UP * 2).to_edge(
+                      RIGHT)), ShowCreation(bar3.scale(.6).to_edge(DOWN * 1).to_edge(LEFT)),
+                  ShowCreation(bar4.scale(.6).to_edge(DOWN * 1).to_edge(RIGHT)),
+                  Write(bar_title.scale(.5).to_edge(UP).to_edge(LEFT)),
+                  Write(bar2_title.scale(.5).to_edge(UP).to_edge(RIGHT)),
+                  Write(bar3_title.scale(.5).to_edge(DOWN * 7).to_edge(LEFT)),
+                  Write(bar4_title.scale(.5).to_edge(DOWN * 7).to_edge(RIGHT)))
+
+        self.wait(50)
+        self.play(FadeOut(conclusie), FadeOut(bar.scale(.6).to_edge(UP * 2).to_edge(LEFT)),
+                  FadeOut(bar2.scale(.6).to_edge(UP * 2).to_edge(
+                      RIGHT)), FadeOut(bar3.scale(.6).to_edge(DOWN * 1).to_edge(LEFT)),
+                  FadeOut(bar4.scale(.6).to_edge(DOWN * 1).to_edge(RIGHT)),
+                  FadeOut(bar_title.scale(.5).to_edge(UP).to_edge(LEFT)),
+                  FadeOut(bar2_title.scale(.5).to_edge(UP).to_edge(RIGHT)),
+                  FadeOut(bar3_title.scale(.5).to_edge(DOWN * 7).to_edge(LEFT)),
+                  FadeOut(bar4_title.scale(.5).to_edge(DOWN * 7).to_edge(RIGHT)))
+
+        TerugkoppelingHoofdvraag = Text("Terugkoppeling hoofdvraag").to_edge(UP * 1)
+        self.play(Write(TerugkoppelingHoofdvraag))
+        jamaar = Text("Ja, dit kan, maar complex").to_edge(
             UP * 6).scale(.8)
-        self.play(Write(temp))
-        on_screen.append(temp)
-        self.wait(1)
-        temp = Text("Et cetera").to_edge(
-            UP * 9).scale(.8)
-        self.play(Write(temp))
-        on_screen.append(temp)
-        self.wait(1)
-
-        for x in on_screen:
-            self.play(FadeOut(x))
-
-        on_screen = []
-        timetable = Table([[]])
-
-        timetabling_problem = Text(
-            "Een rooster moet aan een aantal eisen voldoen:").to_edge(UP * 2.3).scale(.9)
-        self.play(Write(timetabling_problem))
-        tp_1 = Text(
-            "1. Alle lessen die een leerling hoort te krijgen moeten gegeven worden").to_edge(UP * 4).scale(.6).to_edge(LEFT)
-        self.play(Write(tp_1))
-        tp_2 = Text(
-            "2. Een leerling of docent kan niet twee lessen tegelijk volgen/geven").to_edge(UP * 6).scale(.6).to_edge(LEFT)
-        self.play(Write(tp_2))
-        tp_3 = Text(
-            "3. Veel docenten werken part-time").to_edge(UP * 8).scale(.6).to_edge(LEFT)
-        self.play(Write(tp_3))
-
-        self.wait(1)
-
-        timetabling_preferences = Text(
-            "Daarnaast zullen er persoonlijke belangen zijn:").to_edge(UP * 2.3).scale(.9)
-        self.play(FadeOut(tp_1),
-                  FadeOut(tp_2), FadeOut(tp_3), FadeOut(timetabling_problem))
-        self.play(Write(timetabling_preferences))
-        tpr_1 = Text("1. Leerlingen en docenten zullen zelf voorkeuren hebben, zoals zo min mogelijk tussenuren").to_edge(
-            UP * 4).scale(.6).to_edge(LEFT)
-        self.play(Write(tpr_1))
-        tpr_2 = Text("2. Leerlingen hebben liever dat de vakken verspreid zijn over de week, je wilt niet 4 uur Nederlands op één dag hebben").to_edge(
-            UP * 6).scale(.6).to_edge(LEFT)
-        self.play(Write(tpr_2))
+        self.play(Write(jamaar))
+        jamaar = Text("discussiepunten (niet de volle 1000 mans school), desalniettemin aangetoont hoe het zou kunnen").to_edge(
+            UP * 4).scale(.8)
+        self.play(Write(jamaar))
+        self.wait(25)
