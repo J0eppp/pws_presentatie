@@ -637,6 +637,7 @@ class Presentation(Scene):
             bar_names=inhoudstaafdiagram1,
             bar_label_scale_val=.4,
         ).to_edge(UP * 6).scale(1)
+        bar_title = Text("Tussenuren bij 2 docenten per vak")
         self.play(ShowCreation(bar))
 
         self.wait(2)
@@ -668,6 +669,7 @@ class Presentation(Scene):
             bar_names=inhoudstaafdiagram2,
             bar_label_scale_val=.4,
         ).to_edge(UP * 6).scale(1)
+        bar2_title = Text("Negende uren bij 2 docenten per vak")
         self.play(ShowCreation(bar2))
 
         self.wait(2)
@@ -698,6 +700,7 @@ class Presentation(Scene):
             bar_names=inhoudstaafdiagram3,
             bar_label_scale_val=.4,
         ).to_edge(UP * 6).scale(1)
+        bar3_title = Text("Tussenuren bij 3 docenten per vak")
         self.play(ShowCreation(bar3))
 
         self.wait(2)
@@ -728,13 +731,18 @@ class Presentation(Scene):
             bar_colors=colors,
             bar_names=inhoudstaafdiagram4,
             bar_label_scale_val=.4,
+            bar_title="Bar4",
         ).to_edge(UP * 6).scale(1)
+        bar4_title = Text("Negende uren bij 3 docenten per vak")
         self.play(ShowCreation(bar4))
 
         self.wait(2)
         self.play(FadeOut(conclusie), FadeOut(conclusie_4), FadeOut(bar4))
 
-        self.play(ShowCreation(bar).scale(.5).to_edge(UP).to_edge(LEFT))
+        self.play(ShowCreation(bar.scale(.6).to_edge(UP * 2).to_edge(LEFT)), ShowCreation(bar2.scale(.6).to_edge(UP * 2).to_edge(
+            RIGHT)), ShowCreation(bar3.scale(.6).to_edge(DOWN * 1).to_edge(LEFT)), ShowCreation(bar4.scale(.6).to_edge(DOWN * 1).to_edge(RIGHT)), Write(bar_title.scale(.5).to_edge(UP).to_edge(LEFT)), Write(bar2_title.scale(.5).to_edge(UP).to_edge(RIGHT)), Write(bar3_title.scale(.5).to_edge(DOWN * 7).to_edge(LEFT)), Write(bar4_title.scale(.5).to_edge(DOWN * 7).to_edge(RIGHT)))
+
+        return
 
         discussie = Text("Discussie").to_edge(UP * 1)
         self.play(Write(discussie))
