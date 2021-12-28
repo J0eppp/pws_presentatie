@@ -668,7 +668,7 @@ class Presentation(Scene):
             bar_names=inhoudstaafdiagram2,
             bar_label_scale_val=.4,
         ).to_edge(UP * 6).scale(1)
-        self.play(ShowCreaton(bar2))
+        self.play(ShowCreation(bar2))
 
         self.wait(2)
         self.play(FadeOut(conclusie_2), FadeOut(bar2))
@@ -733,6 +733,8 @@ class Presentation(Scene):
 
         self.wait(2)
         self.play(FadeOut(conclusie), FadeOut(conclusie_4), FadeOut(bar4))
+
+        self.play(ShowCreation(bar).scale(.5).to_edge(UP).to_edge(LEFT))
 
         discussie = Text("Discussie").to_edge(UP * 1)
         self.play(Write(discussie))
