@@ -462,17 +462,57 @@ class Presentation(Scene):
         self.play(FadeOut(timmerman_obj_func),
                   FadeOut(timmerman_obj_func_expl))
 
-        timmerman_uitleg_2 = Text(
-            "Een boekenkast kost 20 eenheden hout en 4 uur aan werktijd").to_edge(UP)
+        vier_voorwaarden = Text("Vier voorwaarden").to_edge(UP)
 
-        self.play(FadeTransform(timmerman_obj_func_text, timmerman_uitleg_2))
+        self.play(FadeTransform(timmerman_obj_func_text, vier_voorwaarden))
+
         self.wait(2)
 
-        timmerman_uitleg_3 = Text(
-            "Een tafel kost 10 eenheden hout en 5 uur aan werktijd").to_edge(UP)
+        voorwaarde_1 = Text(
+            "De timmerman mag 80 uur werken\nEen tafel kost 5 uur om te maken en een boekenkast 4 uur").scale(.7).to_edge(UP * 4)
+        self.play(Write(voorwaarde_1))
 
-        self.play(FadeTransform(timmerman_uitleg_2, timmerman_uitleg_3))
-        self.wait(2)
+        self.wait(9)
+
+        voorwaarde_1_formula = Tex(
+            "5 \cdot x + 4 \cdot y \leq 80").to_edge(UP * 7)
+
+        self.play(Write(voorwaarde_1_formula))
+
+        self.wait(6)
+
+        self.play(FadeOut(voorwaarde_1), FadeOut(voorwaarde_1_formula))
+
+        voorwaarde_2 = Text(
+            "De timmerman mag maar 200 eenheden hout gebruiken\nEen tafel kost 10 eenheden hout en een boekenkast kost 20 eenheden hout").scale(.7).to_edge(UP * 4)
+        self.play(Write(voorwaarde_2))
+
+        self.wait(13)
+
+        voorwaarde_2_formula = Tex(
+            "10 \cdot x + 20 \cdot y \leq 200").to_edge(UP * 7)
+        self.play(Write(voorwaarde_2_formula))
+
+        self.wait(5)
+
+        self.play(FadeOut(voorwaarde_2), FadeOut(voorwaarde_2_formula))
+
+        voorwaarde_3_4 = Text(
+            "De oplossing kan alleen bestaan uit positieve gehele getallen").scale(.7).to_edge(UP * 4)
+        self.play(Write(voorwaarde_3_4))
+
+        self.wait(5)
+
+        voorwaarde_3_4_formula_1 = Tex(
+            "x \in \mathbf{N}").to_edge(UP * 7)
+        self.play(Write(voorwaarde_3_4_formula_1))
+        voorwaarde_3_4_formula_2 = Tex("y \in \mathbf{N}").to_edge(UP * 9)
+        self.play(Write(voorwaarde_3_4_formula_2))
+
+        self.wait(3)
+
+        self.play(FadeOut(voorwaarde_3_4), FadeOut(
+            voorwaarde_3_4_formula_1), FadeOut(voorwaarde_3_4_formula_2), FadeOut(vier_voorwaarden))
 
         # Create graph
         axes = Axes(
@@ -487,22 +527,18 @@ class Presentation(Scene):
         # y = 20 - 5/4 x
         graph1 = axes.get_graph(lambda x: 20 - 1.25 * x,
                                 color=WHITE, x_range=[0, 16])
-        graph1_text = Text(
-            "De timmerman mag niet meer dan 80 uur werken", ).to_edge(UP)
-        graph1_text.scale(0.8)
-        self.play(FadeTransform(timmerman_uitleg_3, graph1_text))
-        self.wait(2)
+        # self.wait(2)
 
         self.play(ShowCreation(axes))
 
         graph1_formula = Tex("5 \cdot x + 4 \cdot y = 80").to_edge(UP * 3)
 
-        self.play(ShowCreation(graph1_formula))
-        self.wait(2)
+        self.play(Write(graph1_formula))
+        # self.wait(2)
 
         self.play(ShowCreation(graph1))
 
-        self.wait(2)
+        self.wait(1)
 
         # 10x + 20y = 200
         # 20y = 200 - 10x
@@ -510,36 +546,106 @@ class Presentation(Scene):
         # y = 10 - 1/2 x
         graph2 = axes.get_graph(lambda x: 10 - 0.5 * x,
                                 x_range=[0, 20], color=RED)
-        graph2_text = Text(
-            "De timmerman mag niet teveel hout gebruiken", ).to_edge(UP).scale(0.8)
         graph2_formula = Tex("10 \cdot x + 20 \cdot y = 200").to_edge(UP * 3)
 
-        self.play(FadeTransform(graph1_text, graph2_text), FadeTransform(
-            graph1_formula, graph2_formula))
+        self.play(FadeOut(graph1_formula))
+        self.play(Write(graph2_formula))
 
-        self.wait(1)
+        # self.wait(1)
 
         self.play(ShowCreation(graph2))
 
-        self.wait(2)
+        self.wait(1)
 
-        point0 = Dot(color=YELLOW).move_to(
-            axes.coords_to_point(0, 0)).scale(0.5)
-        point1 = Dot(color=YELLOW).move_to(
-            axes.coords_to_point(13 + 1/3, 3 + 1/3)).scale(0.5)
-        point2 = Dot(color=YELLOW).move_to(
-            axes.coords_to_point(0, 10)).scale(0.5)
-        point3 = Dot(color=YELLOW).move_to(
-            axes.coords_to_point(0, 20)).scale(0.5)
-        point4 = Dot(color=YELLOW).move_to(
-            axes.coords_to_point(16, 0)).scale(0.5)
-        point5 = Dot(color=YELLOW).move_to(
-            axes.coords_to_point(20, 0)).scale(0.5)
+        solution = Dot(color=YELLOW_E).move_to(
+            axes.coords_to_point(12, 4)).scale(.7)
+        solution_label = Tex("(12, 4)").scale(.5)
+        solution_label.move_to(solution.get_center() + 0.5 * UP)
+        self.play(ShowCreation(solution), ShowCreation(solution_label))
 
-        self.play(ShowCreation(point0), ShowCreation(point1), ShowCreation(
-            point2), ShowCreation(point3), ShowCreation(point4), ShowCreation(point5))
+        self.wait(1)
 
-        dots_text = Text("Een van deze punten zal de maximale waarde zijn")
+        self.play(FadeOut(axes), FadeOut(solution), FadeOut(solution_label), FadeOut(
+            graph2), FadeOut(graph2_formula), FadeOut(graph1))
+
+        # timmerman_uitleg_2 = Text(
+        #     "Een boekenkast kost 20 eenheden hout en 4 uur aan werktijd").to_edge(UP)
+
+        # self.play(FadeTransform(timmerman_obj_func_text, timmerman_uitleg_2))
+        # self.wait(6)
+
+        # timmerman_uitleg_3 = Text(
+        #     "Een tafel kost 10 eenheden hout en 5 uur aan werktijd").to_edge(UP)
+
+        # self.play(FadeTransform(timmerman_uitleg_2, timmerman_uitleg_3))
+        # self.wait(2)
+
+        # # Create graph
+        # axes = Axes(
+        #     x_range=[0, 25, 5],
+        #     y_range=[0, 25, 5],
+        #     axis_config={"color": BLUE,
+        #                  "include_numbers": True}
+        # )
+
+        # # 5x + 4y = 80
+        # # 4y = 80 - 5x
+        # # y = 20 - 5/4 x
+        # graph1 = axes.get_graph(lambda x: 20 - 1.25 * x,
+        #                         color=WHITE, x_range=[0, 16])
+        # graph1_text = Text(
+        #     "De timmerman mag niet meer dan 80 uur werken", ).to_edge(UP)
+        # graph1_text.scale(0.8)
+        # self.play(FadeTransform(timmerman_uitleg_3, graph1_text))
+        # self.wait(2)
+
+        # self.play(ShowCreation(axes))
+
+        # graph1_formula = Tex("5 \cdot x + 4 \cdot y = 80").to_edge(UP * 3)
+
+        # self.play(ShowCreation(graph1_formula))
+        # self.wait(2)
+
+        # self.play(ShowCreation(graph1))
+
+        # self.wait(2)
+
+        # # 10x + 20y = 200
+        # # 20y = 200 - 10x
+        # # 2y = 20 - x
+        # # y = 10 - 1/2 x
+        # graph2 = axes.get_graph(lambda x: 10 - 0.5 * x,
+        #                         x_range=[0, 20], color=RED)
+        # graph2_text = Text(
+        #     "De timmerman mag niet teveel hout gebruiken", ).to_edge(UP).scale(0.8)
+        # graph2_formula = Tex("10 \cdot x + 20 \cdot y = 200").to_edge(UP * 3)
+
+        # self.play(FadeTransform(graph1_text, graph2_text), FadeTransform(
+        #     graph1_formula, graph2_formula))
+
+        # self.wait(1)
+
+        # self.play(ShowCreation(graph2))
+
+        # self.wait(2)
+
+        # point0 = Dot(color=YELLOW).move_to(
+        #     axes.coords_to_point(0, 0)).scale(0.5)
+        # point1 = Dot(color=YELLOW).move_to(
+        #     axes.coords_to_point(13 + 1/3, 3 + 1/3)).scale(0.5)
+        # point2 = Dot(color=YELLOW).move_to(
+        #     axes.coords_to_point(0, 10)).scale(0.5)
+        # point3 = Dot(color=YELLOW).move_to(
+        #     axes.coords_to_point(0, 20)).scale(0.5)
+        # point4 = Dot(color=YELLOW).move_to(
+        #     axes.coords_to_point(16, 0)).scale(0.5)
+        # point5 = Dot(color=YELLOW).move_to(
+        #     axes.coords_to_point(20, 0)).scale(0.5)
+
+        # self.play(ShowCreation(point0), ShowCreation(point1), ShowCreation(
+        #     point2), ShowCreation(point3), ShowCreation(point4), ShowCreation(point5))
+
+        # dots_text = Text("Een van deze punten zal de maximale waarde zijn")
 
         self.wait(2)
 
