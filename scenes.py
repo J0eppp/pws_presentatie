@@ -736,26 +736,31 @@ class Presentation(Scene):
 
         discussie = Text("Discussie").to_edge(UP * 1)
         self.play(Write(discussie))
+        self.wait(5)
 
         discussie_1 = Text(
-            "Maatschappelijk significiant, maar niet heel relevant").to_edge(UP * 3).scale(.7)
+            "Maatschappelijk relevant, niet heel significante toevoeging").to_edge(UP * 3).scale(.7)
         self.play(Write(discussie_1))
+        self.wait(20)
 
         discussie_2 = Text(
             "niet goed geweten wat te doen, indien betere inlezing mogelijk meer resultaat").to_edge(UP * 5).scale(.7)
         self.play(Write(discussie_2))
+        self.wait(25)
 
         discussie_3 = Text(
-            "Alleen onderbouw, geen bovenbouw").to_edge(UP * 8).scale(.7)
+            "Alleen onderbouw, geen bovenbouw. Geen lokalen.").to_edge(UP * 8).scale(.7)
         self.play(Write(discussie_3))
+        self.wait(20)
 
         discussie_4 = Text(
-            "aanname docent is fulltimer en mag elk werkuur lesgeven").to_edge(UP * 10).scale(.7)
+            "aanname docent is fulltimer en mag elk werkuur lesgeven.").to_edge(UP * 10).scale(.7)
         self.play(Write(discussie_4))
+        self.wait(4)
 
-        temp = Text(
-            "Docenten en leerlingen moeten op hetzelfde moment beschikbaar zijn").to_edge(UP * 3).scale(.8)
-        self.play(Write(temp))
+        discussie_5 = Text(
+            "maar 2 leerlingen voor voorkeur leerling").to_edge(UP * 13).scale(.8)
+        self.play(Write(discussie_5))
 
         #
         # on_screen.append(temp)
