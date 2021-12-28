@@ -611,12 +611,11 @@ class Presentation(Scene):
 
         conclusie = Text("Resultaten en conclusie").to_edge(UP * 1)
         self.play(Write(conclusie))
+        self.wait(1)
 
         conclusie_1 = Text(
             "Aantal tussenuren bij 2 docenten per vak").to_edge(UP * 3).scale(.7)
         self.play(Write(conclusie_1))
-
-        self.wait(3)
 
         staafdiagram1 = [0.88, 5.75, 3.00, 8.75, 2.67, 7.33]
         inhoudstaafdiagram1 = [
@@ -643,11 +642,10 @@ class Presentation(Scene):
 
         self.play(FadeOut(conclusie_1), FadeOut(bar))
 
+
         conclusie_2 = Text(
             "Aantal negende uren bij 2 docenten per vak").to_edge(UP * 3).scale(.7)
         self.play(Write(conclusie_2))
-
-        self.wait(2)
 
         staafdiagram2 = [3.0, 0.63, 2.75, 2.50, 3.00, 1.17]
         inhoudstaafdiagram2 = [
@@ -670,14 +668,13 @@ class Presentation(Scene):
         ).to_edge(UP * 6).scale(1)
         self.play(ShowCreation(bar2))
 
-        self.wait(2)
+        self.wait(3)
         self.play(FadeOut(conclusie_2), FadeOut(bar2))
 
         conclusie_3 = Text(
             "Aantal tussenuren bij 3 docenten per vak").to_edge(UP * 3).scale(.7)
         self.play(Write(conclusie_3))
 
-        self.wait(2)
 
         staafdiagram3 = [0.38, 0.38, 1.75, 0.38, 3.00, 0.17]
         inhoudstaafdiagram3 = [
@@ -700,7 +697,7 @@ class Presentation(Scene):
         ).to_edge(UP * 6).scale(1)
         self.play(ShowCreation(bar3))
 
-        self.wait(2)
+        self.wait(14)
 
         self.play(FadeOut(conclusie_3), FadeOut(bar3))
 
@@ -764,49 +761,49 @@ class Presentation(Scene):
             "maar 2 leerlingen voor voorkeur leerling").to_edge(UP * 13).scale(.8)
         self.play(Write(discussie_5))
 
-        #
-        # on_screen.append(temp)
-        # self.wait(1)
-        # temp = Text("Een klas moet per vak dezelfde docent hebben").to_edge(
-        #     UP * 6).scale(.8)
-        # self.play(Write(temp))
-        # on_screen.append(temp)
-        # self.wait(1)
-        # temp = Text("Et cetera").to_edge(
-        #     UP * 9).scale(.8)
-        # self.play(Write(temp))
-        # on_screen.append(temp)
-        # self.wait(1)
-        #
-        # for x in on_screen:
-        #     self.play(FadeOut(x))
-        #
-        # on_screen = []
-        # timetable = Table([[]])
-        #
-        # timetabling_problem = Text(
-        #     "Een rooster moet aan een aantal eisen voldoen:").to_edge(UP * 2.3).scale(.9)
-        # self.play(Write(timetabling_problem))
-        # tp_1 = Text(
-        #     "1. Alle lessen die een leerling hoort te krijgen moeten gegeven worden").to_edge(UP * 4).scale(.6).to_edge(LEFT)
-        # self.play(Write(tp_1))
-        # tp_2 = Text(
-        #     "2. Een leerling of docent kan niet twee lessen tegelijk volgen/geven").to_edge(UP * 6).scale(.6).to_edge(LEFT)
-        # self.play(Write(tp_2))
-        # tp_3 = Text(
-        #     "3. Veel docenten werken part-time").to_edge(UP * 8).scale(.6).to_edge(LEFT)
-        # self.play(Write(tp_3))
-        #
-        # self.wait(1)
-        #
-        # timetabling_preferences = Text(
-        #     "Daarnaast zullen er persoonlijke belangen zijn:").to_edge(UP * 2.3).scale(.9)
-        # self.play(FadeOut(tp_1),
-        #           FadeOut(tp_2), FadeOut(tp_3), FadeOut(timetabling_problem))
-        # self.play(Write(timetabling_preferences))
-        # tpr_1 = Text("1. Leerlingen en docenten zullen zelf voorkeuren hebben, zoals zo min mogelijk tussenuren").to_edge(
-        #     UP * 4).scale(.6).to_edge(LEFT)
-        # self.play(Write(tpr_1))
-        # tpr_2 = Text("2. Leerlingen hebben liever dat de vakken verspreid zijn over de week, je wilt niet 4 uur Nederlands op één dag hebben").to_edge(
-        #     UP * 6).scale(.6).to_edge(LEFT)
-        # self.play(Write(tpr_2))
+
+        on_screen.append(temp)
+        self.wait(1)
+        temp = Text("Een klas moet per vak dezelfde docent hebben").to_edge(
+            UP * 6).scale(.8)
+        self.play(Write(temp))
+        on_screen.append(temp)
+        self.wait(1)
+        temp = Text("Et cetera").to_edge(
+            UP * 9).scale(.8)
+        self.play(Write(temp))
+        on_screen.append(temp)
+        self.wait(1)
+
+        for x in on_screen:
+            self.play(FadeOut(x))
+
+        on_screen = []
+        timetable = Table([[]])
+
+        timetabling_problem = Text(
+            "Een rooster moet aan een aantal eisen voldoen:").to_edge(UP * 2.3).scale(.9)
+        self.play(Write(timetabling_problem))
+        tp_1 = Text(
+            "1. Alle lessen die een leerling hoort te krijgen moeten gegeven worden").to_edge(UP * 4).scale(.6).to_edge(LEFT)
+        self.play(Write(tp_1))
+        tp_2 = Text(
+            "2. Een leerling of docent kan niet twee lessen tegelijk volgen/geven").to_edge(UP * 6).scale(.6).to_edge(LEFT)
+        self.play(Write(tp_2))
+        tp_3 = Text(
+            "3. Veel docenten werken part-time").to_edge(UP * 8).scale(.6).to_edge(LEFT)
+        self.play(Write(tp_3))
+
+        self.wait(1)
+
+        timetabling_preferences = Text(
+            "Daarnaast zullen er persoonlijke belangen zijn:").to_edge(UP * 2.3).scale(.9)
+        self.play(FadeOut(tp_1),
+                  FadeOut(tp_2), FadeOut(tp_3), FadeOut(timetabling_problem))
+        self.play(Write(timetabling_preferences))
+        tpr_1 = Text("1. Leerlingen en docenten zullen zelf voorkeuren hebben, zoals zo min mogelijk tussenuren").to_edge(
+            UP * 4).scale(.6).to_edge(LEFT)
+        self.play(Write(tpr_1))
+        tpr_2 = Text("2. Leerlingen hebben liever dat de vakken verspreid zijn over de week, je wilt niet 4 uur Nederlands op één dag hebben").to_edge(
+            UP * 6).scale(.6).to_edge(LEFT)
+        self.play(Write(tpr_2))
