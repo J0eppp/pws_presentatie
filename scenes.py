@@ -640,7 +640,7 @@ class Presentation(Scene):
         bar_title = Text("Tussenuren bij 2 docenten per vak")
         self.play(ShowCreation(bar))
 
-        self.wait(2)
+        self.wait(6)
 
         self.play(FadeOut(conclusie_1), FadeOut(bar))
 
@@ -732,17 +732,18 @@ class Presentation(Scene):
         bar4_title = Text("Negende uren bij 3 docenten per vak")
         self.play(ShowCreation(bar4))
 
-        self.wait(2)
+        self.wait(14)
+
         self.play(FadeOut(resultaten), FadeOut(conclusie_4), FadeOut(bar4))
 
         discussie = Text("Discussie").to_edge(UP * 1)
         self.play(Write(discussie))
-        self.wait(5)
+        self.wait(3)
 
         discussie_1 = Text(
             "Maatschappelijk relevant, niet heel significante toevoeging").to_edge(UP * 3).scale(.7)
         self.play(Write(discussie_1))
-        self.wait(20)
+        self.wait(22)
 
         discussie_2 = Text(
             "Niet goed geweten wat te doen, indien betere inlezing mogelijk meer resultaat").to_edge(UP * 5).scale(.7)
@@ -757,11 +758,13 @@ class Presentation(Scene):
         discussie_4 = Text(
             "Aanname docent is fulltimer en mag elk werkuur lesgeven").to_edge(UP * 10).scale(.7)
         self.play(Write(discussie_4))
-        self.wait(4)
+        self.wait(5)
 
         discussie_5 = Text(
             "Maar 2 leerlingen voor voorkeur leerling").to_edge(UP * 13).scale(.8)
         self.play(Write(discussie_5))
+
+        self.wait(12)
 
         self.play(FadeOut(discussie), FadeOut(discussie_1), FadeOut(
             discussie_2), FadeOut(discussie_3), FadeOut(discussie_4), FadeOut(discussie_5))
@@ -779,7 +782,7 @@ class Presentation(Scene):
                   Write(bar3_title.scale(.5).to_edge(DOWN * 7).to_edge(LEFT)),
                   Write(bar4_title.scale(.5).to_edge(DOWN * 7).to_edge(RIGHT)))
 
-        self.wait(50)
+        self.wait(47)
         self.play(FadeOut(conclusie), FadeOut(bar.scale(.6).to_edge(UP * 2).to_edge(LEFT)),
                   FadeOut(bar2.scale(.6).to_edge(UP * 2).to_edge(
                       RIGHT)), FadeOut(bar3.scale(.6).to_edge(DOWN * 1).to_edge(LEFT)),
@@ -790,13 +793,24 @@ class Presentation(Scene):
                       DOWN * 7).to_edge(LEFT)),
                   FadeOut(bar4_title.scale(.5).to_edge(DOWN * 7).to_edge(RIGHT)))
 
-        TerugkoppelingHoofdvraag = Text(
+        terugkoppeling_hoofdvraag = Text(
             "Terugkoppeling hoofdvraag").to_edge(UP * 1)
-        self.play(Write(TerugkoppelingHoofdvraag))
+        self.play(Write(terugkoppeling_hoofdvraag))
+        self.wait(3)
         jamaar = Text("Ja, dit kan, maar complex").to_edge(
             UP * 6).scale(.8)
         self.play(Write(jamaar))
-        jamaar = Text("Discussiepunten (niet de volle 1000 mans school), desalniettemin aangetoont hoe het zou kunnen").to_edge(
+        jamaardiscussie = Text("Discussiepunten (niet de volle 1000 mans school), desalniettemin aangetoont hoe het zou kunnen").to_edge(
             UP * 10).scale(.8)
-        self.play(Write(jamaar))
-        self.wait(25)
+        self.play(Write(jamaardiscussie))
+        self.wait(12)
+
+        self.play(FadeOut(terugkoppeling_hoofdvraag),
+                  FadeOut(jamaar), FadeOut(jamaardiscussie))
+
+        bedankt = Text("Bedankt voor het kijken").scale(1.5)
+        self.play(Write(bedankt))
+
+        self.wait(5)
+
+        self.play(FadeOut(bedankt))
